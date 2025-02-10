@@ -2,20 +2,19 @@ import { useState } from "react";
 import { ChevronRight, ChevronDown } from "lucide-react";
 
 export default function Dashboard({ selectedModule }) {
-  // console.log("selectedModule", selectedModule.data[0].modules[0].submodules[0].lessons[0].resources[0].slides[0]);
-  console.log("selectedModule", selectedModule.submodules[0].lessons[0].resources[0].slides[0]);
+  console.log("selectedModule", selectedModule);
 
-  // State to track expanded submodules
+  // State to track expanded submodules (default: all expanded)
   const initialExpandedState = selectedModule?.submodules?.reduce((acc, submodule, index) => {
-    acc[index] = true; // All submodules start expanded
+    acc[index] = true;
     return acc;
   }, {});
   const [expandedSubmodules, setExpandedSubmodules] = useState(initialExpandedState);
 
-  // State to track which lesson's resource is active
+  // State to track active resource per lesson (video or slides)
   const [activeResource, setActiveResource] = useState({ lessonIndex: null, resourceUrl: null });
 
-  // Toggle expand/collapse for a submodule
+  // Toggle expand/collapse for submodules
   const toggleSubmodule = (index) => {
     setExpandedSubmodules((prev) => ({
       ...prev,
@@ -23,7 +22,7 @@ export default function Dashboard({ selectedModule }) {
     }));
   };
 
-  // Function to handle resource selection and show below clicked lesson
+  // Handle click to display resource (video/slides) below clicked button
   const handleResourceClick = (lessonIndex, resourceUrl) => {
     setActiveResource((prev) =>
       prev.lessonIndex === lessonIndex && prev.resourceUrl === resourceUrl
@@ -44,72 +43,92 @@ export default function Dashboard({ selectedModule }) {
 
       {/* Submodules List with Expand/Collapse */}
       <div className="space-y-4">
-        {selectedModule.submodules.map((submodule, index) => (
-          <div key={index} className="border p-4 rounded-lg bg-white">
-            {/* Clickable Header to Toggle Expand/Collapse */}
+        {selectedModule.submodules.map((submodule, submoduleIndex) => (
+          <div key={submoduleIndex} className="border p-4 rounded-lg bg-white">
+            {/* Expand/Collapse Button */}
             <div
               className="flex items-center cursor-pointer space-x-2"
-              onClick={() => toggleSubmodule(index)}
+              onClick={() => toggleSubmodule(submoduleIndex)}
             >
-              {expandedSubmodules[index] ? (
+              {expandedSubmodules[submoduleIndex] ? (
                 <ChevronDown className="w-5 h-5 text-gray-600" />
               ) : (
                 <ChevronRight className="w-5 h-5 text-gray-600" />
               )}
               <h3 className="text-xl font-medium">{submodule.title}</h3>
             </div>
-            {/* <p className="text-sm text-gray-500">Duration: {submodule.duration}</p> */}
-            {/* <a href={submodule.url} target="_blank" className="text-blue-600 underline mt-2 block">
-              Start Submodule
-            </a> */}
 
-            {/* Show lessons only if submodule is expanded */}
-            {expandedSubmodules[index] && submodule.lessons && submodule.lessons.length > 0 && (
-              <div className="mt-4 space-y-3">
-                {submodule.lessons.map((lesson, lessonIndex) => (
-                  <div key={lessonIndex} className="border p-3 rounded-lg bg-white shadow-sm">
-                    <h4 className="font-semibold">{lesson.title}</h4>
-                    <p>{lesson.description}</p>
+            {/* Lessons Section */}
+            {expandedSubmodules[submoduleIndex] &&
+              submodule.lessons &&
+              submodule.lessons.length > 0 && (
+                <div className="mt-4 space-y-3">
+                  {submodule.lessons.map((lesson, lessonIndex) => (
+                    <div key={lessonIndex} className="border p-3 rounded-lg bg-white shadow-sm">
+                      <h4 className="font-semibold">{lesson.title}</h4>
+                      <p>{lesson.description}</p>
 
-                    {/* Additional Resources (PDFs, slides, etc.) */}
-                    {lesson.resources && lesson.resources.length > 0 && (
-                      <div className="mt-3">
-                        {lesson.resources.map((resource, resourceIndex) => (
-                          <div key={resourceIndex}>
-                            <button
-                              onClick={() => handleResourceClick(lessonIndex, resource.storedName)}
-                              className="text-blue-600 underline"
-                            >
-                              {resource.originalName}
-                            </button>
-
-                            {/* Show resource below the clicked button */}
-                            {activeResource.lessonIndex === lessonIndex &&
-                              activeResource.resourceUrl === resource.storedName && (
-                                <div className="mt-3 border rounded-lg overflow-hidden w-full h-[350px] bg-gray-100 shadow-md">
-                                  {resource.storedName.endsWith(".mp4") ? (
-                                    <video className="w-full h-full" controls>
-                                      <source src={resource.storedName} type="video/mp4" />
-                                      Your browser does not support the video tag.
-                                    </video>
-                                  ) : (
-                                    <iframe
-                                      src={resource.storedName}
-                                      className="w-full h-full"
-                                      frameBorder="0"
-                                      allowFullScreen
-                                    ></iframe>
-                                  )}
-                                </div>
+                      {/* Resources (Videos & Slides) */}
+                      {lesson.resources && lesson.resources.length > 0 && (
+                        <div className="mt-3">
+                          {lesson.resources.map((resource, resourceIndex) => (
+                            <div key={resourceIndex}>
+                              {/* Button for Slides (Open in New Tab) */}
+                              {resource.slides && resource.slides.length > 0 && (
+                                <button
+                                  onClick={() => window.open(resource.slides[0], "_blank")}
+                                  className="text-blue-600 underline mt-2 block"
+                                >
+                                  View Slides
+                                </button>
                               )}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
+
+                              {/* Button for Videos */}
+                              {resource.storedName && (
+                                <button
+                                  onClick={() => handleResourceClick(lessonIndex, resource.storedName)}
+                                  className="text-blue-600 underline mt-2 block"
+                                >
+                                  Watch Video
+                                </button>
+                              )}
+
+                              {/* Display selected resource below the button */}
+                              {activeResource.lessonIndex === lessonIndex &&
+                                activeResource.resourceUrl === resource.storedName && (
+                                  <div className="mt-3 border rounded-lg overflow-hidden w-full h-[350px] bg-gray-100 shadow-md">
+                                    {/* Embed Video */}
+                                    {resource.storedName.endsWith(".mp4") ? (
+                                      <video className="w-full h-full" controls>
+                                        <source src={resource.storedName} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                      </video>
+                                    ) : resource.storedName.includes("youtube.com") ||
+                                      resource.storedName.includes("vimeo.com") ? (
+                                      <iframe
+                                        src={resource.storedName.replace("watch?v=", "embed/")}
+                                        className="w-full h-full"
+                                        frameBorder="0"
+                                        allowFullScreen
+                                      ></iframe>
+                                    ) : (
+                                      <iframe
+                                        src={resource.storedName}
+                                        className="w-full h-full"
+                                        frameBorder="0"
+                                        allowFullScreen
+                                      ></iframe>
+                                    )}
+                                  </div>
+                                )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
           </div>
         ))}
       </div>

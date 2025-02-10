@@ -117,9 +117,10 @@ export function Sidebar({ setSelectedModule }) {
                   setExpanded(false); 
                 }}
               >
-                <div className="w-4 h-3 bg-gray-400 rounded-full"></div>
+                <div className="w-4 h-4 bg-gray-400 rounded-full"></div>
                 <span className="text-sm hover:text-white">
                   {module.title}
+                  
                   
                 </span>
               </div>
