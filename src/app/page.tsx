@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Sidebar } from "../components/Sidebar";
+import {Sidebar}  from "../components/Sidebar";
 import Dashboard from "../components/Dashboard";
 import { Header } from "../components/Header";
 
@@ -9,10 +9,9 @@ export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); // State to toggle sidebar visibility
 
   return (
-    <div className="flex flex-col h-screen bg-gray-50">
+    <div className="flex flex-col h-screen ">
       <Header setIsSidebarOpen={setIsSidebarOpen} />
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar Component */}
         <div
           className={`${
             isSidebarOpen ? "w-64" : "w-20"
@@ -20,10 +19,7 @@ export default function App() {
         >
           <Sidebar setSelectedModule={setSelectedModule} />
         </div>
-
-        {/* Main Content Area */}
         <div className="flex-1 ml-0  p-6 overflow-y-auto">
-          {/* Only show Dashboard when a module is selected */}
           {selectedModule ? (
             <Dashboard selectedModule={selectedModule} />
           ) : (
