@@ -1,0 +1,462 @@
+[
+  {
+    "status": "success",
+    "message": "Courses retrieved successfully",
+    "data": [
+      {
+        "_id": "679a31fca757dd24233829b6",
+        "title": "Introduction to Programming",
+        "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738158587/yghzsu7ckkwa6nrlu5o8.png",
+        "description": "Learn the basics of programming with hands-on examples.",
+        "instructor": {
+          "_id": "6788c1ab7f8493f213d2d0b8",
+          "username": "Professor Dimitri",
+          "email": "johndoe@example.com",
+          "role": "instructor"
+        },
+        "modules": [
+          {
+            "_id": "67a485e4fa50a600055164d7",
+            "title": "Module 1: Variables and Data Types",
+            "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738835427/wul4g2do6l75uu8hmnbe.png",
+            "submodules": [
+              {
+                "_id": "67a489a1d01e59d32f223ef9",
+                "title": "Understanding Variables",
+                "lessons": [
+                  {
+                    "title": "What are Variables?",
+                    "description": "Introduction to variables and their types.",
+                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef6",
+                        "originalName": "Variables Basics.pdf",
+                        "storedName": "1738836383352-VariablesBasics.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide2.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  },
+                  {
+                    "title": "What are Datatypes?",
+                    "description": "Introduction to variables and their types.",
+                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef7",
+                        "originalName": "Datatypes Overview.pdf",
+                        "storedName": "1738836383352-DatatypesOverview.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide2.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  },
+                  {
+                    "title": "What are Variablesdfd?",
+                    "description": "Introduction to variables and their types.",
+                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef6",
+                        "originalName": "Variables Basics.pdf",
+                        "storedName": "1738836383352-VariablesBasics.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide2.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "_id": "67a489a1d01e59d32f223efe",
+                "title": "Understanding Data Types",
+                "lessons": [
+                  {
+                    "title": "Primitive Data Types",
+                    "description": "Overview of primitive data types in programming.",
+                    "videoUrl": "https://example.com/videos/datatype.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef8",
+                        "originalName": "Data Types Overview.pdf",
+                        "storedName": "1738836383352-DataTypesOverview.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide4.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Complex Data Types",
+                    "description": "Explaining arrays, objects, and other complex data types.",
+                    "videoUrl": "https://example.com/videos/complex-datatype.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef9",
+                        "originalName": "Complex Data Types.pdf",
+                        "storedName": "1738836383352-ComplexDataTypes.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide6.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "_id": "67a485e4fa50a600055164d7",
+            "title": "Module 2: Variables and Data Types",
+            "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738835427/wul4g2do6l75uu8hmnbe.png",
+            "submodules": [
+              {
+                "_id": "67a489a1d01e59d32f223ef9",
+                "title": "Understanding Variables",
+                "lessons": [
+                  {
+                    "title": "What are Variables?",
+                    "description": "Introduction to variables and their types.",
+                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef6",
+                        "originalName": "Variables Basics.pdf",
+                        "storedName": "1738836383352-VariablesBasics.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide2.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  },
+                  {
+                    "title": "What are Datatypes?",
+                    "description": "Introduction to variables and their types.",
+                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef7",
+                        "originalName": "Datatypes Overview.pdf",
+                        "storedName": "1738836383352-DatatypesOverview.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide2.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  },
+                  {
+                    "title": "What are Variablesdfd?",
+                    "description": "Introduction to variables and their types.",
+                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef6",
+                        "originalName": "Variables Basics.pdf",
+                        "storedName": "1738836383352-VariablesBasics.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide2.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "_id": "67a489a1d01e59d32f223efe",
+                "title": "Understanding Data Types",
+                "lessons": [
+                  {
+                    "title": "Primitive Data Types",
+                    "description": "Overview of primitive data types in programming.",
+                    "videoUrl": "https://example.com/videos/datatype.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef8",
+                        "originalName": "Data Types Overview.pdf",
+                        "storedName": "1738836383352-DataTypesOverview.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide4.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Complex Data Types",
+                    "description": "Explaining arrays, objects, and other complex data types.",
+                    "videoUrl": "https://example.com/videos/complex-datatype.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef9",
+                        "originalName": "Complex Data Types.pdf",
+                        "storedName": "1738836383352-ComplexDataTypes.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide6.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "_id": "67a485e4fa50a600055164d7",
+            "title": "Module 3: Variables and Data Types",
+            "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738835427/wul4g2do6l75uu8hmnbe.png",
+            "submodules": [
+              {
+                "_id": "67a489a1d01e59d32f223ef9",
+                "title": "Understanding Variables",
+                "lessons": [
+                  {
+                    "title": "What are Variables?",
+                    "description": "Introduction to variables and their types.",
+                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef6",
+                        "originalName": "Variables Basics.pdf",
+                        "storedName": "1738836383352-VariablesBasics.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide2.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  },
+                  {
+                    "title": "What are Datatypes?",
+                    "description": "Introduction to variables and their types.",
+                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef7",
+                        "originalName": "Datatypes Overview.pdf",
+                        "storedName": "1738836383352-DatatypesOverview.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide2.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  },
+                  {
+                    "title": "What are Variablesdfd?",
+                    "description": "Introduction to variables and their types.",
+                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef6",
+                        "originalName": "Variables Basics.pdf",
+                        "storedName": "1738836383352-VariablesBasics.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide2.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "_id": "67a489a1d01e59d32f223efe",
+                "title": "Understanding Data Types",
+                "lessons": [
+                  {
+                    "title": "Primitive Data Types",
+                    "description": "Overview of primitive data types in programming.",
+                    "videoUrl": "https://example.com/videos/datatype.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef8",
+                        "originalName": "Data Types Overview.pdf",
+                        "storedName": "1738836383352-DataTypesOverview.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide4.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Complex Data Types",
+                    "description": "Explaining arrays, objects, and other complex data types.",
+                    "videoUrl": "https://example.com/videos/complex-datatype.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223ef9",
+                        "originalName": "Complex Data Types.pdf",
+                        "storedName": "1738836383352-ComplexDataTypes.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Variables/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Variables/slide6.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "category": "Programming",
+        "level": "Beginner"
+      },
+      {
+        "_id": "679a31fca757dd24233829b7",
+        "title": "Web Development Basics",
+        "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738158587/yghzsu7ckkwa6nrlu5o8.png",
+        "description": "An introductory course on building websites using HTML, CSS, and JavaScript.",
+        "instructor": {
+          "_id": "6788c1ab7f8493f213d2d0b9",
+          "username": "Professor Sarah",
+          "email": "sarahdoe@example.com",
+          "role": "instructor"
+        },
+        "modules": [
+          {
+            "_id": "67a485e4fa50a600055164d9",
+            "title": "Module 1: HTML and CSS Basics",
+            "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738835427/wul4g2do6l75uu8hmnbe.png",
+            "submodules": [
+              {
+                "_id": "67a489a1d01e59d32f223f10",
+                "title": "HTML Structure",
+                "lessons": [
+                  {
+                    "title": "What is HTML?",
+                    "description": "Understanding HTML and its importance in web development.",
+                    "videoUrl": "https://example.com/videos/html.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223f12",
+                        "originalName": "HTML Basics.pdf",
+                        "storedName": "1738836383352-HTMLBasics.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/HTML/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/HTML/slide2.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  },
+                  {
+                    "title": "HTML Elements",
+                    "description": "Learning about HTML elements and their usage.",
+                    "videoUrl": "https://example.com/videos/htmlelements.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223f13",
+                        "originalName": "HTML Elements.pdf",
+                        "storedName": "1738836383352-HTMLElements.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/HTML/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/HTML/slide4.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "category": "Web Development",
+        "level": "Beginner"
+      },
+      {
+        "_id": "679a31fca757dd24233829b8",
+        "title": "Advanced JavaScript",
+        "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738158587/yghzsu7ckkwa6nrlu5o8.png",
+        "description": "A comprehensive course for mastering JavaScript and its advanced concepts.",
+        "instructor": {
+          "_id": "6788c1ab7f8493f213d2d0ba",
+          "username": "Professor John",
+          "email": "johndoe@example.com",
+          "role": "instructor"
+        },
+        "modules": [
+          {
+            "_id": "67a485e4fa50a600055164da",
+            "title": "Module 1: Functions and Closures",
+            "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738835427/wul4g2do6l75uu8hmnbe.png",
+            "submodules": [
+              {
+                "_id": "67a489a1d01e59d32f223f11",
+                "title": "Understanding Functions",
+                "lessons": [
+                  {
+                    "title": "What are Functions?",
+                    "description": "Exploring the concept of functions in JavaScript.",
+                    "videoUrl": "https://example.com/videos/functions.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223f14",
+                        "originalName": "Functions Overview.pdf",
+                        "storedName": "1738836383352-FunctionsOverview.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Functions/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Functions/slide2.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Closures in JavaScript",
+                    "description": "Deep dive into closures and their uses.",
+                    "videoUrl": "https://example.com/videos/closures.mp4",
+                    "resources": [
+                      {
+                        "_id": "67a4899fd01e59d32f223f15",
+                        "originalName": "Closures Overview.pdf",
+                        "storedName": "1738836383352-ClosuresOverview.pdf",
+                        "slides": [
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/Functions/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/Functions/slide4.png"
+                        ],
+                        "totalSlides": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "category": "JavaScript",
+        "level": "Advanced"
+      }
+    ]
+  }
+]

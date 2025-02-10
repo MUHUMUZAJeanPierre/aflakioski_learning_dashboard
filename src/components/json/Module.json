@@ -1,0 +1,53 @@
+
+[
+  {
+  "course": {
+    "title": "Introduction to Programming",
+    "image": "https://example.com/images/course-image.jpg",
+    "description": "This course is designed for beginners to learn the basics of programming in various languages.",
+    "category": "Computer Science",
+    "level": "Beginner",
+    "instructorId": "60d21b2f4d3b5b5f0b7c89d2",
+    "studentsEnrolled": [
+      "60d21b5f4d3b5b5f0b7c89d5",
+      "60d21b6f4d3b5b5f0b7c89d6"
+    ],
+    "modules": [
+      {
+        "id": "60d21b3f4d3b5b5f0b7c89d3",
+        "title": "Module 1: Basics of Programming",
+        "description": "Introduction to the world of programming. Topics include variables, loops, and functions.",
+        "lessons": [
+          {
+            "title": "Lesson 1: Variables and Data Types",
+            "url": "https://example.com/lesson-1",
+            "duration": "15 minutes"
+          },
+          {
+            "title": "Lesson 2: Loops",
+            "url": "https://example.com/lesson-2",
+            "duration": "20 minutes"
+          }
+        ]
+      },
+      {
+        "id": "60d21b4f4d3b5b5f0b7c89d4",
+        "title": "Module 2: Control Structures",
+        "description": "Learn about conditional statements and control flow in programming.",
+        "lessons": [
+          {
+            "title": "Lesson 1: If-Else Statements",
+            "url": "https://example.com/lesson-3",
+            "duration": "18 minutes"
+          },
+          {
+            "title": "Lesson 2: Switch Case",
+            "url": "https://example.com/lesson-4",
+            "duration": "22 minutes"
+          }
+        ]
+      }
+    ]
+  }
+}
+]
