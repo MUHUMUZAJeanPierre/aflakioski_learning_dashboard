@@ -86,14 +86,14 @@ export function Sidebar({ setSelectedModule, isSidebarOpen, setIsSidebarOpen }) 
 
   return (
     <div
-      className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r shadow-lg transition-transform duration-300 ease-in-out 
+      className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r transition-transform duration-300 ease-in-out 
       ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:relative md:w-64`}
     >
       {/* Sidebar Header */}
-      <div className="p-4 flex items-center md:justify-center justify-between">
-        <img src={logo.src} alt="Logo" className="w-16 h-16 object-contain" />
+      <div className="p-4 flex items-center md:justify-center justify-between pr-4">
+        <img src={logo.src} alt="Logo" className="w-14 h-14 object-contain" />
         {/* Close Button for Mobile */}
-        <button onClick={() => setIsSidebarOpen(false)} className="md:hidden text-white ">
+        <button onClick={() => setIsSidebarOpen(false)} className="md:hidden text-green-500 ">
           ✖
         </button>
       </div>
@@ -105,7 +105,7 @@ export function Sidebar({ setSelectedModule, isSidebarOpen, setIsSidebarOpen }) 
 
       {/* Course Material Accordion */}
       <div
-        className="p-3 rounded-sm cursor-pointer hover:border hover:border-gray-200"
+        className="p-2 m-2 rounded-sm cursor-pointer hover:border hover:border-gray-200"
         onClick={() => setExpanded(!expanded)}
       >
         <div className="flex items-center space-x-2 font-lg text-sm text-black">
@@ -118,14 +118,14 @@ export function Sidebar({ setSelectedModule, isSidebarOpen, setIsSidebarOpen }) 
             {modules.map((module, index) => (
               <div
                 key={module._id}
-                className="flex items-center space-x-1 p-2 rounded-lg text-black hover:text-white cursor-pointer font-[16px] font-sans hover:bg-gray-800"
+                className="flex items-center space-x-1 p-2 rounded-lg text-black cursor-pointer font-[16px] font-sans hover:bg-gray-100"
                 onClick={() => {
                   setSelectedModule(module);
                   setExpanded(false);
                 }}
               >
                 <div className="w-4 h-4 bg-gray-400 rounded-full"></div>
-                <span className="text-sm hover:text-white">Module {index + 1}</span>
+                <span className="text-sm ">Module {index + 1}</span>
               </div>
             ))}
           </div>
@@ -137,7 +137,7 @@ export function Sidebar({ setSelectedModule, isSidebarOpen, setIsSidebarOpen }) 
       </div>
 
       {/* Navigation Links */}
-      <nav className="space-y-1 flex flex-col mt-4">
+      <nav className="space-y-1 flex flex-col mt-4 mx-2 my-2 rounded-sm">
         {["Grades", "Notes", "Discussion Forums", "Messages (2)", "Course Info"].map((item) => (
           <a key={item} href="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-200">
             {item}

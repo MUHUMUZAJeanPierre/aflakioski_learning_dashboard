@@ -1,451 +1,683 @@
 [
   {
-    "status": "success",
-    "message": "Courses retrieved successfully",
     "data": [
       {
         "_id": "679a31fca757dd24233829b6",
-        "title": "Introduction to Programming",
-        "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738158587/yghzsu7ckkwa6nrlu5o8.png",
+        "category": "Programming",
         "description": "Learn the basics of programming with hands-on examples.",
+        "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738158587/yghzsu7ckkwa6nrlu5o8.png",
         "instructor": {
           "_id": "6788c1ab7f8493f213d2d0b8",
-          "username": "Professor Dimitri",
           "email": "johndoe@example.com",
-          "role": "instructor"
+          "role": "instructor",
+          "username": "Professor Dimitri"
         },
+        "level": "Beginner",
         "modules": [
           {
             "_id": "67a485e4fa50a600055164d7",
-            "title": "Module 1: Variables and Data Types",
             "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738835427/wul4g2do6l75uu8hmnbe.png",
             "submodules": [
               {
                 "_id": "67a489a1d01e59d32f223ef9",
-                "title": "Understanding Variables",
                 "lessons": [
                   {
-                    "title": "What are Variables?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef6",
                         "originalName": "Variables Basics.pdf",
-                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "slides": [
                           "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
                           "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
                           "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
                           "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837520/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
-                                                "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
-                                                "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
-                                                "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png"
                         ],
+                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "What are Variables?",
+                    "videoUrl": "https://drive.google.com/file/d/1UVR3EedU2ozHAW9yt_dlGXlqEFZlWHVL/view?usp=sharing"
                   },
                   {
-                    "title": "What are Datatypes?",
-                    "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
+                    "description": "Introduction to variables and their .",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef7",
                         "originalName": "Datatypes Overview.pdf",
-                        "storedName": "1738836383352-DatatypesOverview.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837520/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png"
                         ],
+                        "storedName": "1738836383352-DatatypesOverview.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "What are Datatypes?",
+                    "videoUrl": "https://drive.google.com/file/d/1UVR3EedU2ozHAW9yt_dlGXlqEFZlWHVL/view?usp=sharing"
                   },
                   {
-                    "title": "What are Variablesdfd?",
-                    "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
+                    "description": "Introduction to variables  their types.",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef6",
                         "originalName": "Variables Basics.pdf",
-                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837520/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png"
                         ],
+                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "What are Variablesdfd?",
+                    "videoUrl": "https://drive.google.com/file/d/1UVR3EedU2ozHAW9yt_dlGXlqEFZlWHVL/view?usp=sharing"
                   }
-                ]
+                ],
+                "title": "Understanding Variables"
               },
               {
                 "_id": "67a489a1d01e59d32f223efe",
-                "title": "Understanding Data Types",
                 "lessons": [
                   {
-                    "title": "Primitive Data Types",
                     "description": "Overview of primitive data types in programming.",
-                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef8",
                         "originalName": "Data Types Overview.pdf",
-                        "storedName": "1738836383352-DataTypesOverview.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837520/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png"
                         ],
+                        "storedName": "1738836383352-DataTypesOverview.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "Primitive Data Types",
+                    "videoUrl": "https://drive.google.com/file/d/1UVR3EedU2ozHAW9yt_dlGXlqEFZlWHVL/view?usp=sharing"
                   },
                   {
-                    "title": "Complex Data Types",
                     "description": "Explaining arrays, objects, and other complex data types.",
-                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef9",
                         "originalName": "Complex Data Types.pdf",
-                        "storedName": "1738836383352-ComplexDataTypes.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837520/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png"
                         ],
+                        "storedName": "1738836383352-ComplexDataTypes.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "Complex Data Types",
+                    "videoUrl": "https://drive.google.com/uc?export=download&id=1UVR3EedU2ozHAW9yt_dlGXlqEFZlWHVL"
                   }
-                ]
+                ],
+                "title": "Understanding Data Types"
               }
-            ]
+            ],
+            "title": "Module 1: Variables and Data Types"
           },
           {
             "_id": "67a485e4fa50a600055164d7",
-            "title": "Module 2: Variables and Data Types",
             "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738835427/wul4g2do6l75uu8hmnbe.png",
             "submodules": [
               {
                 "_id": "67a489a1d01e59d32f223ef9",
-                "title": "Understanding Variables",
                 "lessons": [
                   {
-                    "title": "What are Variables?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef6",
                         "originalName": "Variables Basics.pdf",
-                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "slides": [
                           "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
                         ],
+                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "What are Variables?",
+                    "videoUrl": "https://drive.google.com/uc?export=download&id=1UVR3EedU2ozHAW9yt_dlGXlqEFZlWHVL"
                   },
                   {
-                    "title": "What are Datatypes?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef7",
                         "originalName": "Datatypes Overview.pdf",
-                        "storedName": "1738836383352-DatatypesOverview.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837520/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png"
                         ],
+                        "storedName": "1738836383352-DatatypesOverview.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "What are Datatypes?",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al"
                   },
                   {
-                    "title": "What are Variablesdfd?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef6",
                         "originalName": "Variables Basics.pdf",
-                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837520/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png"
                         ],
+                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "What are Variablesdfd?",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al"
                   }
-                ]
+                ],
+                "title": "Understanding Variables"
               },
               {
                 "_id": "67a489a1d01e59d32f223efe",
-                "title": "Understanding Data Types",
                 "lessons": [
                   {
-                    "title": "Primitive Data Types",
                     "description": "Overview of primitive data types in programming.",
-                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef8",
                         "originalName": "Data Types Overview.pdf",
-                        "storedName": "1738836383352-DataTypesOverview.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide11.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide10.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide16.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide20.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide22.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide17.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide15.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide4.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide21.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide7.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide6.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide9.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide2.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide8.png"
                         ],
+                        "storedName": "1738836383352-DataTypesOverview.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "Primitive Data Types",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al"
                   },
                   {
-                    "title": "Complex Data Types",
                     "description": "Explaining arrays, objects, and other complex data types.",
-                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef9",
                         "originalName": "Complex Data Types.pdf",
-                        "storedName": "1738836383352-ComplexDataTypes.pdf",
                         "slides": [
                           "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
                         ],
+                        "storedName": "1738836383352-ComplexDataTypes.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "Complex Data Types",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al"
                   }
-                ]
+                ],
+                "title": "Understanding Data Types"
               }
-            ]
+            ],
+            "title": "Module 2: Variables and Data "
           },
           {
             "_id": "67a485e4fa50a600055164d7",
-            "title": "Module 3: Variables and Data Types",
             "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738835427/wul4g2do6l75uu8hmnbe.png",
             "submodules": [
               {
                 "_id": "67a489a1d01e59d32f223ef9",
-                "title": "Understanding Variables",
                 "lessons": [
                   {
-                    "title": "What are Variables?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://example.com/videos/variables.mp4",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef6",
                         "originalName": "Variables Basics.pdf",
-                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide11.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide10.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide16.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide20.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide22.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide17.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide15.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide4.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide21.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide7.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide6.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide9.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide2.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide8.png"
                         ],
+                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "What are Variables?",
+                    "videoUrl": "https://example.com/videos/variables.mp4"
                   },
                   {
-                    "title": "What are Datatypes?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://example.com/videos/variables.mp4",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef7",
                         "originalName": "Datatypes Overview.pdf",
-                        "storedName": "1738836383352-DatatypesOverview.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide11.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide10.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide16.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide20.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide22.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide17.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide15.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide4.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide21.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide7.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide6.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide9.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide2.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide8.png"
                         ],
+                        "storedName": "1738836383352-DatatypesOverview.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "What are Datatypes?",
+                    "videoUrl": "https://example.com/videos/variables.mp4"
                   },
                   {
-                    "title": "What are Variablesdfd?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://example.com/videos/variables.mp4",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef6",
                         "originalName": "Variables Basics.pdf",
-                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide11.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide10.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide16.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide20.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide22.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide17.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide15.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide4.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide21.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide7.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide6.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide9.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide2.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide8.png"
                         ],
+                        "storedName": "1738836383352-VariablesBasics.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "What are Variablesdfd?",
+                    "videoUrl": "https://example.com/videos/variables.mp4"
                   }
-                ]
+                ],
+                "title": "Understanding Variables"
               },
               {
                 "_id": "67a489a1d01e59d32f223efe",
-                "title": "Understanding Data Types",
                 "lessons": [
                   {
-                    "title": "Primitive Data Types",
                     "description": "Overview of primitive data types in programming.",
-                    "videoUrl": "https://example.com/videos/datatype.mp4",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef8",
                         "originalName": "Data Types Overview.pdf",
-                        "storedName": "1738836383352-DataTypesOverview.pdf",
                         "slides": [
                           "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
                         ],
+                        "storedName": "1738836383352-DataTypesOverview.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "Primitive Data Types",
+                    "videoUrl": "https://example.com/videos/datatype.mp4"
                   },
                   {
-                    "title": "Complex Data Types",
                     "description": "Explaining arrays, objects, and other complex data types.",
-                    "videoUrl": "https://example.com/videos/complex-datatype.mp4",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef9",
                         "originalName": "Complex Data Types.pdf",
-                        "storedName": "1738836383352-ComplexDataTypes.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide11.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide10.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide16.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide20.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide22.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide17.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide15.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide4.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide21.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide7.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide6.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide9.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide2.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide8.png"
                         ],
+                        "storedName": "1738836383352-ComplexDataTypes.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "Complex Data Types",
+                    "videoUrl": "https://example.com/videos/complex-datatype.mp4"
                   }
-                ]
+                ],
+                "title": "Understanding Data Types"
               }
-            ]
+            ],
+            "title": "Module 3: Variables and Data Types"
           }
         ],
-        "category": "Programming",
-        "level": "Beginner"
+        "title": "Introduction to Programming"
       },
       {
         "_id": "679a31fca757dd24233829b7",
-        "title": "Web Development Basics",
-        "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738158587/yghzsu7ckkwa6nrlu5o8.png",
+        "category": "Web Development",
         "description": "An introductory course on building websites using HTML, CSS, and JavaScript.",
+        "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738158587/yghzsu7ckkwa6nrlu5o8.png",
         "instructor": {
           "_id": "6788c1ab7f8493f213d2d0b9",
-          "username": "Professor Sarah",
           "email": "sarahdoe@example.com",
-          "role": "instructor"
+          "role": "instructor",
+          "username": "Professor Sarah"
         },
+        "level": "Beginner",
         "modules": [
           {
             "_id": "67a485e4fa50a600055164d9",
-            "title": "Module 1: HTML and CSS Basics",
             "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738835427/wul4g2do6l75uu8hmnbe.png",
             "submodules": [
               {
                 "_id": "67a489a1d01e59d32f223f10",
-                "title": "HTML Structure",
                 "lessons": [
                   {
-                    "title": "What is HTML?",
                     "description": "Understanding HTML and its importance in web development.",
-                    "videoUrl": "https://example.com/videos/html.mp4",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223f12",
                         "originalName": "HTML Basics.pdf",
-                        "storedName": "1738836383352-HTMLBasics.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide11.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide10.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide16.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide20.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide22.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide17.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide15.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide4.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide21.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide7.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide6.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide9.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide2.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide8.png"
                         ],
+                        "storedName": "1738836383352-HTMLBasics.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "What is HTML?",
+                    "videoUrl": "https://example.com/videos/html.mp4"
                   },
                   {
-                    "title": "HTML Elements",
                     "description": "Learning about HTML elements and their usage.",
-                    "videoUrl": "https://example.com/videos/htmlelements.mp4",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223f13",
                         "originalName": "HTML Elements.pdf",
-                        "storedName": "1738836383352-HTMLElements.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide11.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide10.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide16.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide20.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide22.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide17.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide15.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide4.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide21.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide7.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide6.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide9.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide2.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide8.png"
                         ],
+                        "storedName": "1738836383352-HTMLElements.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "HTML Elements",
+                    "videoUrl": "https://example.com/videos/htmlelements.mp4"
                   }
-                ]
+                ],
+                "title": "HTML Structure"
               }
-            ]
+            ],
+            "title": "Module 1: HTML and CSS Basics"
           }
         ],
-        "category": "Web Development",
-        "level": "Beginner"
+        "title": "Web Development Basics"
       },
       {
         "_id": "679a31fca757dd24233829b8",
-        "title": "Advanced JavaScript",
-        "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738158587/yghzsu7ckkwa6nrlu5o8.png",
+        "category": "JavaScript",
         "description": "A comprehensive course for mastering JavaScript and its advanced concepts.",
+        "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738158587/yghzsu7ckkwa6nrlu5o8.png",
         "instructor": {
           "_id": "6788c1ab7f8493f213d2d0ba",
-          "username": "Professor John",
           "email": "johndoe@example.com",
-          "role": "instructor"
+          "role": "instructor",
+          "username": "Professor John"
         },
+        "level": "Advanced",
         "modules": [
           {
             "_id": "67a485e4fa50a600055164da",
-            "title": "Module 1: Functions and Closures",
             "image": "https://res.cloudinary.com/dkmz21mob/image/upload/v1738835427/wul4g2do6l75uu8hmnbe.png",
             "submodules": [
               {
                 "_id": "67a489a1d01e59d32f223f11",
-                "title": "Understanding Functions",
                 "lessons": [
                   {
-                    "title": "What are Functions?",
                     "description": "Exploring the concept of functions in JavaScript.",
-                    "videoUrl": "https://example.com/videos/functions.mp4",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223f14",
                         "originalName": "Functions Overview.pdf",
-                        "storedName": "1738836383352-FunctionsOverview.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide11.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide10.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide16.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide20.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide22.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide17.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide15.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide4.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide21.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide7.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide6.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide9.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide2.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide8.png"
                         ],
+                        "storedName": "1738836383352-FunctionsOverview.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "What are Functions?",
+                    "videoUrl": "https://example.com/videos/functions.mp4"
                   },
                   {
-                    "title": "Closures in JavaScript",
                     "description": "Deep dive into closures and their uses.",
-                    "videoUrl": "https://example.com/videos/closures.mp4",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223f15",
                         "originalName": "Closures Overview.pdf",
-                        "storedName": "1738836383352-ClosuresOverview.pdf",
                         "slides": [
-                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836380/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide11.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide10.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide16.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide20.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide22.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide17.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide15.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide4.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide3.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide21.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836381/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide7.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide6.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide9.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide5.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738836382/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide2.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738313940/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide8.png"
                         ],
+                        "storedName": "1738836383352-ClosuresOverview.pdf",
                         "totalSlides": 2
                       }
-                    ]
+                    ],
+                    "title": "Closures in JavaScript",
+                    "videoUrl": "https://example.com/videos/closures.mp4"
                   }
-                ]
+                ],
+                "title": "Understanding Functions"
               }
-            ]
+            ],
+            "title": "Module 1: Functions and Closures"
           }
         ],
-        "category": "JavaScript",
-        "level": "Advanced"
+        "title": "Advanced JavaScript"
       }
-    ]
+    ],
+    "message": "Courses retrieved successfully",
+    "status": "success"
   }
 ]
