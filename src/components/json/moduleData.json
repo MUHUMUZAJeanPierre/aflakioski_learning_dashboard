@@ -27,14 +27,20 @@
                   {
                     "title": "What are Variables?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef6",
                         "originalName": "Variables Basics.pdf",
                         "storedName": "1738836383352-VariablesBasics.pdf",
                         "slides": [
-                          "https://vanguardeconomics0-my.sharepoint.com/:p:/g/personal/phoebe_vanguardeconomics_com/ETsCpT47v6xHv2rvwNcQCkUBLXsVmS3pEA8HSHpiuAs5QQ"
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide19.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide23.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide1.png",
+                          "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837520/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide14.png",
+                                                "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide13.png",
+                                                "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide12.png",
+                                                "https://res.cloudinary.com/dkmz21mob/image/upload/v1738837521/pdf_app/INTRODUCTION%20TO%20WINDOWS%20PROGRAMMING/slide18.png"
                         ],
                         "totalSlides": 2
                       }
@@ -43,13 +49,15 @@
                   {
                     "title": "What are Datatypes?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef7",
                         "originalName": "Datatypes Overview.pdf",
                         "storedName": "1738836383352-DatatypesOverview.pdf",
                         "slides": [
+                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+                          "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
                           "https://www.figma.com/deck/fqVHNkG8zxJ8ySMLyxIg1D/Untitled?node-id=1-247&viewport=55%2C-11%2C0.29&t=oFy96P4olyOZcCRw-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
                         ],
                         "totalSlides": 2
@@ -59,7 +67,7 @@
                   {
                     "title": "What are Variablesdfd?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef6",
@@ -81,7 +89,7 @@
                   {
                     "title": "Primitive Data Types",
                     "description": "Overview of primitive data types in programming.",
-                    "videoUrl": "https://example.com/videos/datatype.mp4",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef8",
@@ -97,7 +105,7 @@
                   {
                     "title": "Complex Data Types",
                     "description": "Explaining arrays, objects, and other complex data types.",
-                    "videoUrl": "https://example.com/videos/complex-datatype.mp4",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef9",
@@ -126,7 +134,7 @@
                   {
                     "title": "What are Variables?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef6",
@@ -142,7 +150,7 @@
                   {
                     "title": "What are Datatypes?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef7",
@@ -158,7 +166,7 @@
                   {
                     "title": "What are Variablesdfd?",
                     "description": "Introduction to variables and their types.",
-                    "videoUrl": "https://example.com/videos/variables.mp4",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef6",
@@ -180,7 +188,7 @@
                   {
                     "title": "Primitive Data Types",
                     "description": "Overview of primitive data types in programming.",
-                    "videoUrl": "https://example.com/videos/datatype.mp4",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef8",
@@ -196,7 +204,7 @@
                   {
                     "title": "Complex Data Types",
                     "description": "Explaining arrays, objects, and other complex data types.",
-                    "videoUrl": "https://example.com/videos/complex-datatype.mp4",
+                    "videoUrl": "https://vanguardeconomics0-my.sharepoint.com/:v:/g/personal/jisca_vanguardeconomics_com/EZBXmNCyVD9OlbkO2DaO5UkBgxjdJGifrnQuHYF4tUz2Ww?e=JUh6al",
                     "resources": [
                       {
                         "_id": "67a4899fd01e59d32f223ef9",

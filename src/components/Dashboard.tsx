@@ -1,53 +1,68 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { ChevronRight, ChevronDown } from "lucide-react";
 
+// Dynamically import ReactPlayer to fix Next.js SSR issues
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+
 export default function Dashboard({ selectedModule }) {
-  console.log("selectedModule", selectedModule);
+  console.log("selectedModule 01", selectedModule.submodules[0].lessons[0].videoUrl);
 
-  // State to track expanded submodules (default: all expanded)
-  const initialExpandedState = selectedModule?.submodules?.reduce((acc, submodule, index) => {
-    acc[index] = true;
-    return acc;
-  }, {});
-  const [expandedSubmodules, setExpandedSubmodules] = useState(initialExpandedState);
+  useEffect(() => {
+    if (selectedModule?.submodules?.[0]?.lessons?.[0]?.videoUrl) {
+      console.log("selectedModule 01", selectedModule.submodules[0].lessons[0].videoUrl);
+    }
+  }, [selectedModule]);
 
-  // State to track active resource per lesson (video or slides)
-  const [activeResource, setActiveResource] = useState({ lessonIndex: null, resourceUrl: null });
+  if (!selectedModule || !selectedModule.submodules || selectedModule.submodules.length === 0) {
+    return <div className="text-center text-gray-500">No submodules available for this module.</div>;
+  }
 
-  // Toggle expand/collapse for submodules
+  const [expandedSubmodules, setExpandedSubmodules] = useState(
+    selectedModule?.submodules?.reduce((acc, _, index) => ({ ...acc, [index]: true }), {})
+  );
+
+  const [activeResource, setActiveResource] = useState({
+    lessonIndex: null,
+    resourceUrl: null,
+    type: null,
+    slides: [],
+    currentSlideIndex: 0,
+  });
+
   const toggleSubmodule = (index) => {
-    setExpandedSubmodules((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
+    setExpandedSubmodules((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
-  // Handle click to display resource (video/slides) below clicked button
-  const handleResourceClick = (lessonIndex, resourceUrl) => {
+  const handleResourceClick = (lessonIndex, resourceUrl, type, slides = []) => {
     setActiveResource((prev) =>
-      prev.lessonIndex === lessonIndex && prev.resourceUrl === resourceUrl
-        ? { lessonIndex: null, resourceUrl: null } // Collapse if clicked again
-        : { lessonIndex, resourceUrl }
+      prev.lessonIndex === lessonIndex && prev.resourceUrl === resourceUrl && prev.type === type
+        ? { lessonIndex: null, resourceUrl: null, type: null, slides: [], currentSlideIndex: 0 }
+        : { lessonIndex, resourceUrl, type, slides, currentSlideIndex: 0 }
     );
   };
 
-  if (!selectedModule || !selectedModule.submodules || selectedModule.submodules.length === 0) {
-    return <div>No submodules available for this module.</div>;
-  }
+  const goToSlide = (direction) => {
+    setActiveResource((prev) => {
+      const newIndex = prev.currentSlideIndex + direction;
+      return {
+        ...prev,
+        currentSlideIndex: newIndex,
+        resourceUrl: prev.slides[newIndex],
+      };
+    });
+  };
 
   return (
-    <div className="flex flex-col w-full p-6 space-y-4">
-      {/* Module Title */}
+    <div className="flex flex-col w-full p-6 space-y-4 font-sans">
       <h2 className="text-2xl font-semibold">{selectedModule.title}</h2>
-      <p className="text-lg">{selectedModule.description}</p>
+      <p className="text-lg text-gray-600">{selectedModule.description}</p>
 
-      {/* Submodules List with Expand/Collapse */}
       <div className="space-y-4">
         {selectedModule.submodules.map((submodule, submoduleIndex) => (
-          <div key={submoduleIndex} className="border p-4 rounded-lg bg-white">
-            {/* Expand/Collapse Button */}
+          <div key={submoduleIndex} className="border p-4 rounded-lg bg-white shadow">
             <div
-              className="flex items-center cursor-pointer space-x-2"
+              className="flex items-center cursor-pointer space-x-2 hover:bg-gray-100 p-2 rounded"
               onClick={() => toggleSubmodule(submoduleIndex)}
             >
               {expandedSubmodules[submoduleIndex] ? (
@@ -58,77 +73,89 @@ export default function Dashboard({ selectedModule }) {
               <h3 className="text-xl font-medium">{submodule.title}</h3>
             </div>
 
-            {/* Lessons Section */}
-            {expandedSubmodules[submoduleIndex] &&
-              submodule.lessons &&
-              submodule.lessons.length > 0 && (
-                <div className="mt-4 space-y-3">
-                  {submodule.lessons.map((lesson, lessonIndex) => (
-                    <div key={lessonIndex} className="border p-3 rounded-lg bg-white shadow-sm">
-                      <h4 className="font-semibold">{lesson.title}</h4>
-                      <p>{lesson.description}</p>
+            {expandedSubmodules[submoduleIndex] && submodule.lessons?.length > 0 && (
+              <div className="mt-4 space-y-3">
+                {submodule.lessons.map((lesson, lessonIndex) => (
+                  <div key={lessonIndex} className="border p-3 rounded-lg bg-white shadow-sm">
+                    <h4 className="font-semibold text-lg">{lesson.title}</h4>
+                    <p className="text-sm text-gray-600">{lesson.description}</p>
 
-                      {/* Resources (Videos & Slides) */}
-                      {lesson.resources && lesson.resources.length > 0 && (
-                        <div className="mt-3">
-                          {lesson.resources.map((resource, resourceIndex) => (
-                            <div key={resourceIndex}>
-                              {/* Button for Slides (Open in New Tab) */}
-                              {resource.slides && resource.slides.length > 0 && (
-                                <button
-                                  onClick={() => window.open(resource.slides[0], "_blank")}
-                                  className="text-blue-600 underline mt-2 block"
-                                >
-                                  View Slides
-                                </button>
-                              )}
+                    {lesson.videoUrl && (
+                      <button
+                        onClick={() => handleResourceClick(lessonIndex, lesson.videoUrl, "video")}
+                        className="text-blue-600 font-semibold mt-2 block hover:underline"
+                      >
+                        Watch Video
+                      </button>
+                    )}
 
-                              {/* Button for Videos */}
-                              {resource.storedName && (
-                                <button
-                                  onClick={() => handleResourceClick(lessonIndex, resource.storedName)}
-                                  className="text-blue-600 underline mt-2 block"
-                                >
-                                  Watch Video
-                                </button>
-                              )}
+                    {lesson.resources?.map((resource, resourceIndex) => (
+                      <div key={resourceIndex} className="mt-2">
+                        {resource.slides?.length > 0 && (
+                          <button
+                            onClick={() => handleResourceClick(lessonIndex, resource.slides[0], "slides", resource.slides)}
+                            className="text-green-600 font-semibold block hover:underline"
+                          >
+                            View Slides
+                          </button>
+                        )}
+                      </div>
+                    ))}
 
-                              {/* Display selected resource below the button */}
-                              {activeResource.lessonIndex === lessonIndex &&
-                                activeResource.resourceUrl === resource.storedName && (
-                                  <div className="mt-3 border rounded-lg overflow-hidden w-full h-[350px] bg-gray-100 shadow-md">
-                                    {/* Embed Video */}
-                                    {resource.storedName.endsWith(".mp4") ? (
-                                      <video className="w-full h-full" controls>
-                                        <source src={resource.storedName} type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                      </video>
-                                    ) : resource.storedName.includes("youtube.com") ||
-                                      resource.storedName.includes("vimeo.com") ? (
-                                      <iframe
-                                        src={resource.storedName.replace("watch?v=", "embed/")}
-                                        className="w-full h-full"
-                                        frameBorder="0"
-                                        allowFullScreen
-                                      ></iframe>
-                                    ) : (
-                                      <iframe
-                                        src={resource.storedName}
-                                        className="w-full h-full"
-                                        frameBorder="0"
-                                        allowFullScreen
-                                      ></iframe>
-                                    )}
-                                  </div>
-                                )}
+                    {/* Display Video or Slides Below the Button */}
+                    {activeResource.lessonIndex === lessonIndex && activeResource.resourceUrl && (
+                      <div className="mt-3 border rounded-lg overflow-hidden w-full h-[500px] bg-gray-100 shadow-md flex flex-col items-center">
+                        {activeResource.type === "video" ? (
+                          <ReactPlayer
+                            url={activeResource.resourceUrl}
+                            controls
+                            width="100%"
+                            height="100%"
+                          />
+                        ) : (
+                          <>
+                            {/* Render slides */}
+                            <iframe
+                              src={activeResource.resourceUrl}
+                              className="w-full h-full"
+                              frameBorder="0"
+                              allowFullScreen
+                            ></iframe>
+
+                            {/* Slide Navigation Buttons */}
+                            <div className="flex justify-between w-full p-2">
+                              <button
+                                onClick={() => goToSlide(-1)}
+                                disabled={activeResource.currentSlideIndex === 0}
+                                className={`px-4 py-2 text-white rounded ${
+                                  activeResource.currentSlideIndex === 0
+                                    ? "bg-gray-400 cursor-not-allowed"
+                                    : "bg-green-600 hover:bg-green-700"
+                                }`}
+                              >
+                                Previous
+                              </button>
+
+                              <button
+                                onClick={() => goToSlide(1)}
+                                disabled={activeResource.currentSlideIndex === activeResource.slides.length - 1}
+                                className={`px-4 py-2 text-white rounded ${
+                                  activeResource.currentSlideIndex === activeResource.slides.length - 1
+                                    ? "bg-gray-400 cursor-not-allowed"
+                                    : "bg-green-600 hover:bg-green-700"
+                                }`}
+                              >
+                                Next
+                              </button>
                             </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
+                          </>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
