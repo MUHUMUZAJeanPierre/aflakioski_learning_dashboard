@@ -1,34 +1,177 @@
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+'use client';
 
-export default function AuthForm({ type }) {
-  const router = useRouter();
-  const [formData, setFormData] = useState({ email: "", password: "" });
+import { useState } from 'react';
+import { FaGoogle, FaFacebook, FaTwitter } from 'react-icons/fa'; // Import icons for Google, Facebook, and Twitter
+import Link from 'next/link';
+import '../app/globals.css';
+
+export default function AuthForm() {
+  const [isLogin, setIsLogin] = useState(false); // New state to toggle between forms
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    termsAccepted: false,
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value,
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted: ", formData);
-    router.push("/dashboard"); // Redirect after login/signup
+    console.log(formData);
+  };
+
+  const toggleForm = () => {
+    setIsLogin((prev) => !prev); // Toggle between login and register
+  };
+
+  // Third-party authentication (Google, Facebook, Twitter) handler
+  const handleGoogleLogin = () => {
+    console.log("Google login is clicked");
+    // Here, you would call your Google login API integration or use a service like Firebase Authentication or NextAuth.js
+  };
+
+  const handleFacebookLogin = () => {
+    console.log("Facebook login is clicked");
+    // Facebook login logic would go here
+  };
+
+  const handleTwitterLogin = () => {
+    console.log("Twitter login is clicked");
+    // Twitter login logic would go here
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 shadow-md rounded">
-      <h2 className="text-2xl font-bold">{type === "login" ? "Login" : "Sign Up"}</h2>
-      <input
-        type="email"
-        placeholder="Email"
-        className="border p-2 my-2 w-full"
-        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        className="border p-2 my-2 w-full"
-        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-      />
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded w-full">
-        {type === "login" ? "Login" : "Sign Up"}
-      </button>
-    </form>
+    <div className="flex justify-center items-center min-h-screen bg-cover bg-center bg-no-repeat relative">
+      <div className="absolute inset-0 bg-cover bg-center hero ">
+        <div className="absolute inset-0 bg-black/80"></div>
+      </div>
+      <div className="bg-white p-8 rounded-md shadow-lg w-[24rem] relative">
+        <h2 className="text-xl font-semibold  mb-6 font-sans text-[#16A34A]">
+          {isLogin ? 'LOGIN' : 'CREATE ACCOUNT'}
+        </h2>
+        <form onSubmit={handleSubmit}>
+          {!isLogin && (
+            <input
+              type="text"
+              name="name"
+              placeholder="John Doe"
+              className="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          )}
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            className="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            className="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          {!isLogin && (
+            <>
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Repeat your password"
+                className="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+              />
+              <div className="flex items-center mb-4">
+                <input
+                  type="checkbox"
+                  name="termsAccepted"
+                  className="w-4 h-4 mr-2"
+                  checked={formData.termsAccepted}
+                  onChange={handleChange}
+                  required
+                />
+                <label className="text-sm">
+                  I agree to all statements in{' '}
+                  <Link href="#" className="text-[#16A34A] font-semibold">
+                    Terms of Service
+                  </Link>
+                </label>
+              </div>
+            </>
+          )}
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-[#16A34A] to-[#16A34A] text-white py-2 rounded-md hover:opacity-90"
+          >
+            {isLogin ? 'LOGIN' : 'SIGN UP'}
+          </button>
+        </form>
+
+        {/* Third-party authentication icons */}
+        <div className="mt-4 flex justify-center gap-4">
+          <button
+            onClick={handleGoogleLogin}
+            className="flex items-center justify-center bg-[#dbf9ff10] hover:bg-[#16A34A] text-white py-2 px-2 rounded-full shadow-md hover:opacity-90"
+          >
+            <FaGoogle className="text-lg text-[#16A34A] hover:text-white" /> 
+          </button>
+
+          <button
+            onClick={handleFacebookLogin}
+            className="flex items-center justify-center bg-[#dbf9ff10] hover:bg-[#16A34A]  text-white py-2 px-2 rounded-full shadow-md hover:opacity-90"
+          >
+            <FaFacebook className=" text-lg text-[#16A34A] hover:text-white" /> 
+          </button>
+
+          <button
+            onClick={handleTwitterLogin}
+            className="flex items-center justify-center bg-[#dbf9ff10] hover:bg-[#16A34A] text-white py-2 px-2 rounded-full shadow-md hover:opacity-90"
+          >
+            <FaTwitter className="text-lg text-[#16A34A] hover:text-white" />
+          </button>
+        </div>
+
+        <p className="text-center text-sm mt-4 flex gap-2">
+          {isLogin ? (
+            <>
+              Don't have an account?{' '}
+              <button
+                onClick={toggleForm}
+                className="text-[#16A34A] font-semibold "
+              >
+                Sign up here
+              </button>
+            </>
+          ) : (
+            <>
+              Already have an account?{' '}
+              <button
+                onClick={toggleForm}
+                className="text-[#16A34A] font-semibold"
+              >
+                Login here
+              </button>
+            </>
+          )}
+        </p>
+      </div>
+    </div>
   );
 }

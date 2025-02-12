@@ -19,7 +19,7 @@ export const Header = ({ setIsSidebarOpen }) => {
         <Bell className="w-5 h-5 cursor-pointer" />
         <div className="relative">
           <div
-            className="sm:w-10 w-12 h-12  sm:h-10  bg-green-500 rounded-full flex items-center justify-center cursor-pointer"
+            className="sm:w-10 w-12 h-12  sm:h-10  bg-[#15803D] rounded-full flex items-center justify-center cursor-pointer"
             onClick={() => setProfileMenuOpen(!profileMenuOpen)}
           >
             <span className="text-white font-bold">J</span>
