@@ -6,21 +6,37 @@ const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 export default function Dashboard({ selectedModule }) {
   const [expandedSubmodules, setExpandedSubmodules] = useState({});
+  const [expandedQuiz, setExpandedQuiz] = useState(false);
+  const [userAnswers, setUserAnswers] = useState({});
+  const [score, setScore] = useState(null);
+  const [quizSubmitted, setQuizSubmitted] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(300); // 5 minutes (300 seconds)
+  const [quizStarted, setQuizStarted] = useState(false);
+
+
+
   const [activeResource, setActiveResource] = useState({
     lessonIndex: null,
     resourceUrl: null,
-    type: null,
-    slides: [],
-    currentSlideIndex: 0,
-    isFullScreen: false, 
+    type: null, // 'video' or 'pdf'
+    isFullScreen: false,
   });
 
-  const playerRef = useRef(null);
+  // const pdfUrls = data.data[0].modules[0].submodules[1].lessons[0].resources[0].pdfUrls;
+console.log(activeResource)
+
   const containerRef = useRef(null);
 
   useEffect(() => {
-    console.log("Selected Module:", selectedModule);
-  }, [selectedModule]);
+    if (quizStarted && timeLeft > 0) {
+      const timer = setTimeout(() => {
+        setTimeLeft(timeLeft - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else if (timeLeft === 0 && !quizSubmitted) {
+      submitQuiz();
+    }
+  }, [timeLeft, quizStarted]);
 
   const toggleSubmodule = (index) => {
     setExpandedSubmodules((prev) => ({
@@ -29,35 +45,16 @@ export default function Dashboard({ selectedModule }) {
     }));
   };
 
-  const processVideoUrl = (url) => {
-    if (url.includes("drive.google.com")) {
-      const match = url.match(/\/d\/(.+?)\//);
-      if (match) {
-        return `https://drive.google.com/uc?export=download&id=${match[1]}`;
-      }
-    }
-    return url;
+  const toggleQuiz = () => {
+    setExpandedQuiz((prev) => !prev);
   };
 
-  const handleResourceClick = (lessonIndex, resourceUrl, type, slides = []) => {
-    const processedUrl = type === "video" ? processVideoUrl(resourceUrl) : resourceUrl;
-
+  const handleResourceClick = (lessonIndex, resourceUrl, type) => {
     setActiveResource((prev) =>
-      prev.lessonIndex === lessonIndex && prev.resourceUrl === processedUrl && prev.type === type
-        ? { lessonIndex: null, resourceUrl: null, type: null, slides: [], currentSlideIndex: 0, isFullScreen: false }
-        : { lessonIndex, resourceUrl: processedUrl, type, slides, currentSlideIndex: 0, isFullScreen: false }
+      prev.lessonIndex === lessonIndex && prev.resourceUrl === resourceUrl && prev.type === type
+        ? { lessonIndex: null, resourceUrl: null, type: null, isFullScreen: false }
+        : { lessonIndex, resourceUrl, type, isFullScreen: false }
     );
-  };
-
-  const goToSlide = (direction) => {
-    setActiveResource((prev) => {
-      const newIndex = prev.currentSlideIndex + direction;
-      return {
-        ...prev,
-        currentSlideIndex: newIndex,
-        resourceUrl: prev.slides[newIndex],
-      };
-    });
   };
 
   const toggleFullScreen = () => {
@@ -72,18 +69,41 @@ export default function Dashboard({ selectedModule }) {
     }
   };
 
-  if (!selectedModule?.submodules?.length) {
-    return <div className="text-center text-gray-500">No submodules available.</div>;
-  }
+  const handleAnswerChange = (qIndex, answer) => {
+    setUserAnswers((prev) => ({
+      ...prev,
+      [qIndex]: answer,
+    }));
+  };
+
+  const submitQuiz = () => {
+    if (!selectedModule.quiz) return;
+
+    let correctAnswers = 0;
+    selectedModule.quiz.questions.forEach((question, index) => {
+      if (userAnswers[index] === question.correctAnswer) {
+        correctAnswers++;
+      }
+    });
+
+    setScore(correctAnswers);
+    setQuizSubmitted(true);
+  };
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+  };
 
   return (
-    <div className="flex flex-col w-full p-6 space-y-4 font-sans ">
-      <h2 className="text-sm ">{selectedModule.title}</h2>
+    <div className="flex flex-col w-full p-6 space-y-4 font-sans">
+      <h2 className="text-sm">{selectedModule.title}</h2>
       <p className="text-sm text-gray-600">{selectedModule.description}</p>
 
       <div className="space-y-4">
         {selectedModule.submodules.map((submodule, submoduleIndex) => (
-          <div key={submodule._id} className="border p-4 rounded-lg  ">
+          <div key={submodule._id} className="border p-4 rounded-lg">
             <div
               className="flex items-center cursor-pointer space-x-2 p-2 rounded"
               onClick={() => toggleSubmodule(submoduleIndex)}
@@ -97,13 +117,12 @@ export default function Dashboard({ selectedModule }) {
             </div>
 
             {expandedSubmodules[submoduleIndex] && submodule.lessons?.length > 0 && (
-              <div className="mt-4 space-y-3 ">
+              <div className="mt-4 space-y-3">
                 {submodule.lessons.map((lesson, lessonIndex) => (
-                  <div key={lessonIndex} className="border p-3 rounded-lg bg-white ">
+                  <div key={lessonIndex} className="border p-3 rounded-lg bg-white">
                     <h4 className="font-normal text-sm">{lesson.title}</h4>
                     <p className="text-sm text-gray-600">{lesson.description}</p>
 
-                    
                     {lesson.videoUrl && (
                       <button
                         onClick={() => handleResourceClick(lessonIndex, lesson.videoUrl, "video")}
@@ -114,15 +133,15 @@ export default function Dashboard({ selectedModule }) {
                     )}
 
                     {lesson.resources?.map((resource, resourceIndex) => (
-                      <div key={resourceIndex} className="mt-2 ">
-                        {resource.slides?.length > 0 && (
+                      <div key={resourceIndex} className="mt-2">
+                        {resource.pdfUrl && (
                           <button
                             onClick={() =>
-                              handleResourceClick(lessonIndex, resource.slides[0], "slides", resource.slides)
+                              handleResourceClick(lessonIndex, `${resource.pdfUrl}#toolbar=0`, "pdf")
                             }
-                            className="text-green-600 font-semibold block hover:underline"
+                            className="text-red-600 font-semibold block hover:underline"
                           >
-                            View Slides
+                            View PDF
                           </button>
                         )}
                       </div>
@@ -131,67 +150,29 @@ export default function Dashboard({ selectedModule }) {
                     {activeResource.lessonIndex === lessonIndex && activeResource.resourceUrl && (
                       <div
                         ref={containerRef}
-                        className={`relative  mt-3 border rounded-lg overflow-hidden w-full flex flex-col items-center ${activeResource.isFullScreen ? "fixed inset-0 z-50 h-screen w-screen" : "sm:h-[600px] h-[250px]"
+                        className={`relative mt-3 border rounded-lg overflow-hidden w-full flex flex-col items-center ${activeResource.isFullScreen ? "fixed inset-0 z-50 h-screen w-screen" : "sm:h-[600px] h-[250px]"
                           }`}
                       >
                         <button
                           onClick={toggleFullScreen}
-                          className="absolute top-2 right-2 bg-white p-2 rounded-full "
+                          className="absolute top-2 right-2 bg-white p-2 rounded-full"
                         >
                           {activeResource.isFullScreen ? <Minimize size={20} /> : <Maximize size={20} />}
                         </button>
 
                         {activeResource.type === "video" ? (
                           <div className="w-full max-w-6xl h-full flex justify-center items-center">
-                            <ReactPlayer
-                              ref={playerRef}
-                              url={activeResource.resourceUrl}
-                              controls
-                              playing
-                              width="100%"
-                              height="100%"
-                            />
+                            <ReactPlayer url={activeResource.resourceUrl} controls playing width="100%" height="100%" />
                           </div>
                         ) : (
-                          <>
-                            <div className="w-full h-full flex justify-center items-center bg-white">
-                              <img
-                                src={activeResource.resourceUrl}
-                                alt="Slide"
-                                className="w-auto h-full max-w-full max-h-full object-contain"
-                              />
-                            </div>
-
-                            
-                            <div className="flex justify-between items-center w-full px-4 py-3  bg-white rounded-b-md text-center sm:flex-row flex-row">
-                              <button
-                                onClick={() => goToSlide(-1)}
-                                disabled={activeResource.currentSlideIndex === 0}
-                                className={`flex items-center justify-center w-auto px-3 py-1 sm:px-5 sm:py-2 text-xs sm:text-base text-white font-semibold rounded-md ${activeResource.currentSlideIndex === 0
-                                    ? "bg-gray-400 cursor-not-allowed"
-                                    : "bg-green-600 hover:bg-green-700"
-                                  }`}
-                              >
-                                 Previous
-                              </button>
-
-                              <span className="flex items-center text-sm font-sm text-center">
-                                Slide {activeResource.currentSlideIndex + 1} / {activeResource.slides.length}
-                              </span>
-
-                              <button
-                                onClick={() => goToSlide(1)}
-                                disabled={activeResource.currentSlideIndex === activeResource.slides.length - 1}
-                                className={`flex items-center justify-center w-auto px-3 py-1 sm:px-5 sm:py-2 text-xs sm:text-base text-white font-semibold  rounded-md ${activeResource.currentSlideIndex === activeResource.slides.length - 1
-                                    ? "bg-gray-400 cursor-not-allowed"
-                                    : "bg-green-600 hover:bg-green-700"
-                                  }`}
-                              >
-                                Next 
-                              </button>
-                            </div>
-
-                          </>
+                          <div className="w-full h-full flex justify-center items-center bg-white">
+                            <iframe
+                              src={activeResource.resourceUrl}
+                              className="w-full h-full"
+                              title="PDF Viewer"
+                              frameBorder="0"
+                            />
+                          </div>
                         )}
                       </div>
                     )}
@@ -202,6 +183,75 @@ export default function Dashboard({ selectedModule }) {
           </div>
         ))}
       </div>
+
+      {selectedModule.quiz&& (
+        <div className="border p-4 rounded-sm bg-gray-100 mt-4">
+          <div className="flex items-center cursor-pointer space-x-2 p-2 rounded-sm" onClick={toggleQuiz}>
+            {expandedQuiz ? (
+              <ChevronDown className="w-5 h-5 text-gray-600" />
+            ) : (
+              <ChevronRight className="w-5 h-5 text-gray-600" />
+            )}
+            <h3 className="text-lg font-semibold">{selectedModule.quiz.title}</h3>
+          </div>
+
+          {expandedQuiz && (
+            <div className="mt-4 space-y-3">
+
+              {!quizSubmitted && (
+                <div className="text-center font-semibold text-lg text-red-600">
+                  ⏳ Time Left: {formatTime(timeLeft)}
+                </div>
+              )}
+
+              {selectedModule.quiz.questions.map((question, qIndex) => (
+                <div key={qIndex} className="border p-3 rounded-lg bg-white">
+                  <p className="text-sm font-medium">{qIndex + 1}. {question.question}</p>
+                  <ul className="mt-1">
+                    {question.options.map((option, oIndex) => (
+                      <li key={oIndex} className="text-sm">
+                        <label className="flex items-center">
+                          <input
+                            type="radio"
+                            name={`q-${qIndex}`}
+                            value={option}
+                            checked={userAnswers[qIndex] === option}
+                            onChange={() => handleAnswerChange(qIndex, option)}
+                            disabled={quizSubmitted}
+                            className="mr-2"
+                          />
+                          {option}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+
+              {!quizSubmitted ? (
+                <button
+                  onClick={submitQuiz}
+                  className="mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700"
+                >
+                  Submit Quiz
+                </button>
+              ) : (
+                <div className="mt-4 text-center font-semibold text-lg">
+                  Your Score: {score} / {selectedModule.quiz.questions.length}
+                  <p className={`text-sm ${score > selectedModule.quiz.questions.length / 2 ? "text-green-600" : "text-red-600"}`}>
+                    {score > selectedModule.quiz.questions.length / 2
+                      ? "Great job! You passed!"
+                      : "Keep practicing! You can improve."}
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
+
+
+

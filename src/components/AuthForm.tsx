@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { FaGoogle, FaFacebook, FaTwitter } from 'react-icons/fa'; // Import icons for Google, Facebook, and Twitter
+import { FaGoogle } from 'react-icons/fa'; 
 import Link from 'next/link';
 import '../app/globals.css';
 
 export default function AuthForm() {
-  const [isLogin, setIsLogin] = useState(false); // New state to toggle between forms
+  const [isLogin, setIsLogin] = useState(false); 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,32 +29,20 @@ export default function AuthForm() {
   };
 
   const toggleForm = () => {
-    setIsLogin((prev) => !prev); // Toggle between login and register
+    setIsLogin((prev) => !prev);
   };
 
-  // Third-party authentication (Google, Facebook, Twitter) handler
   const handleGoogleLogin = () => {
-    console.log("Google login is clicked");
-    // Here, you would call your Google login API integration or use a service like Firebase Authentication or NextAuth.js
-  };
-
-  const handleFacebookLogin = () => {
-    console.log("Facebook login is clicked");
-    // Facebook login logic would go here
-  };
-
-  const handleTwitterLogin = () => {
-    console.log("Twitter login is clicked");
-    // Twitter login logic would go here
+    window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=token&scope=email profile';
   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-cover bg-center bg-no-repeat relative">
-      <div className="absolute inset-0 bg-cover bg-center hero ">
+      <div className="absolute inset-0 bg-cover bg-center hero">
         <div className="absolute inset-0 bg-black/80"></div>
       </div>
       <div className="bg-white p-8 rounded-md shadow-lg w-[24rem] relative">
-        <h2 className="text-xl font-semibold  mb-6 font-sans text-[#16A34A]">
+        <h2 className="text-xl font-semibold mb-6 font-sans text-[#16A34A]">
           {isLogin ? 'LOGIN' : 'CREATE ACCOUNT'}
         </h2>
         <form onSubmit={handleSubmit}>
@@ -124,27 +112,12 @@ export default function AuthForm() {
           </button>
         </form>
 
-        {/* Third-party authentication icons */}
-        <div className="mt-4 flex justify-center gap-4">
+        <div className="mt-4 flex justify-center gap-4 w-full bg-gradient-to-r from-[#16A34A] to-[#16A34A] text-white py-2 rounded-md hover:opacity-90">
           <button
             onClick={handleGoogleLogin}
-            className="flex items-center justify-center bg-[#dbf9ff10] hover:bg-[#16A34A] text-white py-2 px-2 rounded-full shadow-md hover:opacity-90"
+            className="flex items-center justify-center hover:bg-[#16A34A] text-white py-2 px-2 rounded-full  hover:opacity-90"
           >
-            <FaGoogle className="text-lg text-[#16A34A] hover:text-white" /> 
-          </button>
-
-          <button
-            onClick={handleFacebookLogin}
-            className="flex items-center justify-center bg-[#dbf9ff10] hover:bg-[#16A34A]  text-white py-2 px-2 rounded-full shadow-md hover:opacity-90"
-          >
-            <FaFacebook className=" text-lg text-[#16A34A] hover:text-white" /> 
-          </button>
-
-          <button
-            onClick={handleTwitterLogin}
-            className="flex items-center justify-center bg-[#dbf9ff10] hover:bg-[#16A34A] text-white py-2 px-2 rounded-full shadow-md hover:opacity-90"
-          >
-            <FaTwitter className="text-lg text-[#16A34A] hover:text-white" />
+            <FaGoogle className="text-lg text-white hover:text-white" /> 
           </button>
         </div>
 

@@ -141,7 +141,62 @@
                 "title": "Understanding Data Types"
               }
             ],
-            "title": "Module 1: Variables and Data Types"
+            "title": "Module 1: Variables and Data Types",
+            "quiz": {
+              "title": "Quiz: Variables and Data Types",
+              "questions": [
+                {
+                  "question": "What is a variable in programming?",
+                  "options": [
+                    "A fixed value",
+                    "A named storage location in memory",
+                    "A type of function",
+                    "An operator"
+                  ],
+                  "correctAnswer": "A named storage location in memory"
+                },
+                {
+                  "question": "Which of the following is a primitive data type?",
+                  "options": [
+                    "Array",
+                    "Boolean",
+                    "Object",
+                    "Function"
+                  ],
+                  "correctAnswer": "Boolean"
+                },
+                {
+                  "question": "Which keyword is used to declare a variable in JavaScript?",
+                  "options": [
+                    "var",
+                    "int",
+                    "float",
+                    "define"
+                  ],
+                  "correctAnswer": "var"
+                },
+                {
+                  "question": "What is the default value of an uninitialized variable in JavaScript?",
+                  "options": [
+                    "null",
+                    "undefined",
+                    "0",
+                    "None"
+                  ],
+                  "correctAnswer": "undefined"
+                },
+                {
+                  "question": "Which of the following is a correct way to define a constant variable in JavaScript?",
+                  "options": [
+                    "let x = 10;",
+                    "const x = 10;",
+                    "var x = 10;",
+                    "define x = 10;"
+                  ],
+                  "correctAnswer": "const x = 10;"
+                }
+              ]
+            }
           },
           {
             "_id": "67a485e4fa50a600055164d7",
@@ -274,7 +329,62 @@
                 "title": "Understanding Data Types"
               }
             ],
-            "title": "Module 2: Variables and Data "
+            "title": "Module 2: Variables and Data ",
+            "quiz": {
+              "title": "Quiz: this is quiz two",
+              "questions": [
+                {
+                  "question": "What is a variable in programming?",
+                  "options": [
+                    "A fixed value",
+                    "A named storage location in memory",
+                    "A type of function",
+                    "An operator"
+                  ],
+                  "correctAnswer": "A named storage location in memory"
+                },
+                {
+                  "question": "Which of the following is a primitive data type?",
+                  "options": [
+                    "Array",
+                    "Boolean",
+                    "Object",
+                    "Function"
+                  ],
+                  "correctAnswer": "Boolean"
+                },
+                {
+                  "question": "Which keyword is used to declare a variable in JavaScript?",
+                  "options": [
+                    "var",
+                    "int",
+                    "float",
+                    "define"
+                  ],
+                  "correctAnswer": "var"
+                },
+                {
+                  "question": "What is the default value of an uninitialized variable in JavaScript?",
+                  "options": [
+                    "null",
+                    "undefined",
+                    "0",
+                    "None"
+                  ],
+                  "correctAnswer": "undefined"
+                },
+                {
+                  "question": "Which of the following is a correct way to define a constant variable in JavaScript?",
+                  "options": [
+                    "let x = 10;",
+                    "const x = 10;",
+                    "var x = 10;",
+                    "define x = 10;"
+                  ],
+                  "correctAnswer": "const x = 10;"
+                }
+              ]
+            }
           },
           {
             "_id": "67a485e4fa50a600055164d7",
@@ -461,7 +571,62 @@
                 "title": "Understanding Data Types"
               }
             ],
-            "title": "Module 3: Variables and Data Types"
+            "title": "Module 3: This is Module 3 Types",
+            "quiz": {
+              "title": "Quiz: this is quiz 3 title",
+              "questions": [
+                {
+                  "question": "What is a variable in programming?",
+                  "options": [
+                    "A fixed value",
+                    "A named storage location in memory",
+                    "A type of function",
+                    "An operator"
+                  ],
+                  "correctAnswer": "A named storage location in memory"
+                },
+                {
+                  "question": "Which of the following is a primitive data type?",
+                  "options": [
+                    "Array",
+                    "Boolean",
+                    "Object",
+                    "Function"
+                  ],
+                  "correctAnswer": "Boolean"
+                },
+                {
+                  "question": "Which keyword is used to declare a variable in JavaScript?",
+                  "options": [
+                    "var",
+                    "int",
+                    "float",
+                    "define"
+                  ],
+                  "correctAnswer": "var"
+                },
+                {
+                  "question": "What is the default value of an uninitialized variable in JavaScript?",
+                  "options": [
+                    "null",
+                    "undefined",
+                    "0",
+                    "None"
+                  ],
+                  "correctAnswer": "undefined"
+                },
+                {
+                  "question": "Which of the following is a correct way to define a constant variable in JavaScript?",
+                  "options": [
+                    "let x = 10;",
+                    "const x = 10;",
+                    "var x = 10;",
+                    "define x = 10;"
+                  ],
+                  "correctAnswer": "const x = 10;"
+                }
+              ]
+            }
           }
         ],
         "title": "Introduction to Programming"
@@ -569,7 +734,62 @@
             "title": "Module 1: HTML and CSS Basics"
           }
         ],
-        "title": "Web Development Basics"
+        "title": "Web Development Basics",
+        "quiz": {
+          "title": "Quiz: A comprehensive course for mastering JavaScript and its advanced concepts",
+          "questions": [
+            {
+              "question": "What is a variable in programming?",
+              "options": [
+                "A fixed value",
+                "A named storage location in memory",
+                "A type of function",
+                "An operator"
+              ],
+              "correctAnswer": "A named storage location in memory"
+            },
+            {
+              "question": "Which of the following is a primitive data type?",
+              "options": [
+                "Array",
+                "Boolean",
+                "Object",
+                "Function"
+              ],
+              "correctAnswer": "Boolean"
+            },
+            {
+              "question": "Which keyword is used to declare a variable in JavaScript?",
+              "options": [
+                "var",
+                "int",
+                "float",
+                "define"
+              ],
+              "correctAnswer": "var"
+            },
+            {
+              "question": "What is the default value of an uninitialized variable in JavaScript?",
+              "options": [
+                "null",
+                "undefined",
+                "0",
+                "None"
+              ],
+              "correctAnswer": "undefined"
+            },
+            {
+              "question": "Which of the following is a correct way to define a constant variable in JavaScript?",
+              "options": [
+                "let x = 10;",
+                "const x = 10;",
+                "var x = 10;",
+                "define x = 10;"
+              ],
+              "correctAnswer": "const x = 10;"
+            }
+          ]
+        }
       },
       {
         "_id": "679a31fca757dd24233829b8",
@@ -674,7 +894,62 @@
             "title": "Module 1: Functions and Closures"
           }
         ],
-        "title": "Advanced JavaScript"
+        "title": "Advanced JavaScript",
+        "quiz": {
+          "title": "Quiz: A comprehensive course for mastering JavaScript and its advanced concepts",
+          "questions": [
+            {
+              "question": "What is a variable in programming?",
+              "options": [
+                "A fixed value",
+                "A named storage location in memory",
+                "A type of function",
+                "An operator"
+              ],
+              "correctAnswer": "A named storage location in memory"
+            },
+            {
+              "question": "Which of the following is a primitive data type?",
+              "options": [
+                "Array",
+                "Boolean",
+                "Object",
+                "Function"
+              ],
+              "correctAnswer": "Boolean"
+            },
+            {
+              "question": "Which keyword is used to declare a variable in JavaScript?",
+              "options": [
+                "var",
+                "int",
+                "float",
+                "define"
+              ],
+              "correctAnswer": "var"
+            },
+            {
+              "question": "What is the default value of an uninitialized variable in JavaScript?",
+              "options": [
+                "null",
+                "undefined",
+                "0",
+                "None"
+              ],
+              "correctAnswer": "undefined"
+            },
+            {
+              "question": "Which of the following is a correct way to define a constant variable in JavaScript?",
+              "options": [
+                "let x = 10;",
+                "const x = 10;",
+                "var x = 10;",
+                "define x = 10;"
+              ],
+              "correctAnswer": "const x = 10;"
+            }
+          ]
+        }
       }
     ],
     "message": "Courses retrieved successfully",
