@@ -15,6 +15,7 @@ export default function AuthForm() {
     password: '',
     confirmPassword: '',
     termsAccepted: false,
+    
   });
 
   const handleChange = (e) => {
