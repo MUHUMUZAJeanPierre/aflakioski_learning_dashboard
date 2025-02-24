@@ -4,9 +4,11 @@ import { useState } from 'react';
 import { FaGoogle } from 'react-icons/fa'; 
 import Link from 'next/link';
 import '../app/globals.css';
+import { useRouter } from "next/navigation";
 
 export default function AuthForm() {
   const [isLogin, setIsLogin] = useState(false); 
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -31,11 +33,14 @@ export default function AuthForm() {
   const toggleForm = () => {
     setIsLogin((prev) => !prev);
   };
-
   const handleGoogleLogin = () => {
-    window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=token&scope=email profile';
+  
+    // Wait a bit to ensure logout is completed, then redirect to Google login
+    setTimeout(() => {
+      window.location.href = "https://course-back-2-00rq.onrender.com/auth/google";
+    }, 1000); // 1-second delay to allow logout to process
   };
-
+  
   return (
     <div className="flex justify-center items-center min-h-screen bg-cover bg-center bg-no-repeat relative">
       <div className="absolute inset-0 bg-cover bg-center hero">
