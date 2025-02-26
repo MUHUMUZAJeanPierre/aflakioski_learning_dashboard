@@ -61,8 +61,8 @@ export default function Home() {
             </button>
             <button
               onClick={() => {
-                console.log("dashboard");
-                router.push("/dashboard");
+                console.log("courses");
+                router.push("/courses");
               }}
               className="border border-gray-400 px-6 py-3 rounded-lg font-semibold text-white"
             >

@@ -9,39 +9,64 @@ export default function GoogleAuthCallback() {
 
   useEffect(() => {
     const fetchToken = async () => {
-      const queryParams = new URLSearchParams(window.location.search);
-      const token = queryParams.get("token");
-
-      if (!token) {
-        console.error("No token received");
-        return;
-      }
-
-      // Store token in localStorage
-      localStorage.setItem("authToken", token);
-
       try {
+        // First, attempt to get the token from the URL hash if present
+        const hashParams = new URLSearchParams(window.location.hash.substring(1));
+        let token = hashParams.get("access_token");
+
+        // If not in hash, check query parameters
+        if (!token) {
+          const queryParams = new URLSearchParams(window.location.search);
+          token = queryParams.get("token");
+        }
+
+        // If still no token, try to get it from the backend
+        if (!token) {
+          const response = await axios.get(
+            "https://course-back-2-00rq.onrender.com/auth/google/callback" + window.location.search
+          );
+          token = response.data.token;
+        }
+
+        if (!token) {
+          console.error("No token received from any source");
+          return;
+        }
+
+        // Store token in localStorage
+        localStorage.setItem("authToken", token);
+        console.log("Token stored:", token);
+
         // Fetch user details using the token
-        const response = await axios.get(
+        const userResponse = await axios.get(
           "https://course-back-2-00rq.onrender.com/user",
-          { headers: { Authorization: `Bearer ${token}` } }
+          {
+            headers: { 
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json"
+            }
+          }
         );
 
-        console.log("User Data:", response.data);
+        console.log("User Data:", userResponse.data);
 
-        // Redirect to the dashboard
+        // Redirect to dashboard
         router.push("/dashboard");
       } catch (error) {
-        console.error("Failed to fetch user details", error);
+        console.error("Authentication error:", error);
+        // Handle error appropriately
+        router.push("/login?error=auth_failed");
       }
     };
 
-    fetchToken();
+    // Add a small delay to ensure all parameters are available
+    setTimeout(fetchToken, 100);
   }, [router]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <p>Authenticating...</p>
+    <div className="flex flex-col justify-center items-center min-h-screen">
+      <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-green-500 mb-4"></div>
+      <p className="text-gray-600">Completing authentication...</p>
     </div>
   );
 }
