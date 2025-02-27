@@ -5,7 +5,7 @@ import { Sidebar } from "../../components/Sidebar";
 import Dashboard from "../../components/Dashboard";
 import { Header } from "../../components/Header";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchModules } from "../../redux/slices/dataSlice";
+import { fetchModules, fetchCourse } from "../../redux/slices/dataSlice";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -16,18 +16,16 @@ export default function Homepage() {
   const searchParams = useSearchParams();
   const courseId = searchParams.get("courseId");
 
-  const { modules = [], loading, error } = useSelector((state) => state.data || {});
-  const { courses = [] } = useSelector((state) => state.data || {});
-
-  // Get current course information safely
-  const currentCourse = courses?.find((course) => course._id === courseId) || {};
+  const { modules = [], loading, error, courses = [], course = {} } = useSelector((state) => state.data || {});
 
   useEffect(() => {
     if (courseId) {
       dispatch(fetchModules(courseId));
+      dispatch(fetchCourse(courseId));
     }
   }, [dispatch, courseId]);
 
+  const currentCourse = course?._id === courseId ? course : courses?.find((c) => c._id === courseId) || {};
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -38,7 +36,7 @@ export default function Homepage() {
         setIsSidebarOpen={setIsSidebarOpen} 
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
-        title={currentCourse?.title || "Course Content"}
+        courseTitle={currentCourse?.title || "Course Content"}
       />
       
       <div className="flex flex-1 overflow-hidden">
