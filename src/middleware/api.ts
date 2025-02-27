@@ -15,11 +15,9 @@ api.interceptors.request.use((config) => {
 export const courseApi = {
   getCourses: () => api.get('/course'),
   getCourseById: (id) => api.get(`/course/${id}`),
-  enrollCourse: (formData) => api.post('/enroll/', formData, {
-    headers: { 'Content-Type': 'multipart/form-data' }
-  }),
+  enrollCourse: (userId,courseId) => api.post(`/enroll/${userId}/${courseId}`),
   getModules: (courseId) => api.get(`/course/${courseId}/modules`),
-  getAllModules: () => api.get('/modules'),
+  getAllCourseModules: (courseId) => api.get(`/coursemodules/${courseId}`),
   getModuleById: (moduleId) => api.get(`/modules/${moduleId}`),
   getLessons: (moduleId) => api.get(`/modules/${moduleId}/lessons`),
   submitQuiz: (moduleId, answers) => 
@@ -48,8 +46,8 @@ export const courseApi = {
 
 
 export const authApi = {
-  login: (credentials) => api.post('/auth/login', credentials),
-  register: (userData) => api.post('/auth/register', userData),
+  login: (credentials) => api.post('/login', credentials),
+  register: (userData) => api.post('/register', userData),
   verifyEmail: (token) => api.post(`/auth/verify/${token}`),
   forgotPassword: (email) => api.post('/auth/forgot-password', { email }),
   resetPassword: (token, password) => 

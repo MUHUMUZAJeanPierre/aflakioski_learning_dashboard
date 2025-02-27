@@ -1,23 +1,34 @@
 "use client";
+
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCourses, enrollInCourse } from "../../../../redux/slices/dataSlice";
-import { Header } from "../../../../components/Header";
+import { fetchCourses, enrollInCourse } from "@/redux/slices/dataSlice";
+import { Header } from "@/components/Header";
 import { ArrowLeft, CheckCircle, AlertCircle, BarChart, Clock, Users } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function CourseEnrollmentPage() {
+  const searchParams = useSearchParams();
+  const courseId = searchParams.get('courseId');
   const router = useRouter();
-  const { courseId } = router.query;
   const dispatch = useDispatch();
-  const { courses, loading, error } = useSelector((state) => state.courses);
+  const { courses, loading, error } = useSelector((state) => state.data);
   const [enrolling, setEnrolling] = useState(false);
   const [enrollmentError, setEnrollmentError] = useState(null);
   const [enrollmentSuccess, setEnrollmentSuccess] = useState(false);
   
   const course = courses.find(c => c._id === courseId) || {};
+  const [user, setUser] = useState(null);
+
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+      setUser(storedUser);
+    }
+  }, []);
 
   useEffect(() => {
     if (courses.length === 0) {
@@ -30,12 +41,12 @@ export default function CourseEnrollmentPage() {
     setEnrollmentError(null);
     
     try {
-      await dispatch(enrollInCourse(courseId)).unwrap();
+      await dispatch(enrollInCourse({userId: user?._id, courseId:courseId})).unwrap();
       setEnrollmentSuccess(true);
       
       // Redirect to course page after successful enrollment after a short delay
       setTimeout(() => {
-        router.push(`/course/${courseId}`);
+        router.push(`/dashboard?courseId=${courseId}`);
       }, 2000);
     } catch (error) {
       setEnrollmentError(error);
@@ -126,7 +137,7 @@ export default function CourseEnrollmentPage() {
               <div className="flex flex-wrap gap-4 mb-6">
                 <div className="flex items-center text-gray-600">
                   <Clock size={18} className="mr-2" />
-                  <span>{course.duration || '8 weeks'}</span>
+                  <span>{course.duration || 'Open'}</span>
                 </div>
                 <div className="flex items-center text-gray-600">
                   <Users size={18} className="mr-2" />

@@ -18,8 +18,8 @@ export const fetchCourse = createAsyncThunk(
 );
 export const fetchModules = createAsyncThunk(
   'modules/fetchModules',
-  async () => {
-    const response = await courseApi.getAllModules();
+  async (courseId) => {
+    const response = await courseApi.getAllCourseModules(courseId);
     return response.data.data;
   }
 );
@@ -50,15 +50,20 @@ export const updateSubmodule = createAsyncThunk(
 
 export const enrollInCourse = createAsyncThunk(
   'courses/enrollInCourse',
-  async (formData, { rejectWithValue }) => {
+  async ({ userId, courseId }, { rejectWithValue }) => {
     try {
-      const response = await courseApi.enrollCourse(formData);
-      return response.data.data;
+      if (!userId || !courseId) {
+        throw new Error("Missing userId or courseId");
+      }
+      const response = await courseApi.enrollCourse(userId, courseId);
+      return response.data; 
     } catch (error) {
-      return rejectWithValue(error.message || 'Failed to enroll in course');
+      return rejectWithValue(error.response?.data?.message || error.message || 'Failed to enroll in course');
     }
   }
 );
+
+
 
 
 const dataSlice = createSlice({

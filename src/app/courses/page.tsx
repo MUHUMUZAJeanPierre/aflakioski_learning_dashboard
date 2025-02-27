@@ -22,17 +22,54 @@ export default function CoursesPage() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  // Filter courses based on enrollment status and search query
-  const filteredCourses = courses
+const [user, setUser] = useState(null);
+const [userData, setUserData] = useState(null);
+const [filteredCourses, setFilteredCourses] = useState([]);
+
+useEffect(() => {
+  if (typeof window !== "undefined") {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    if (storedUser) setUser(storedUser); // Ensure it's not null
+  }
+}, []);
+
+useEffect(() => {
+  if (!user?._id) return; // Avoid making the request with undefined userId
+
+  const fetchUserData = async () => {
+    try {
+      const res = await fetch(`https://course-back-2-00rq.onrender.com/api/user/${user._id}`);
+      if (!res.ok) throw new Error("Failed to fetch user data");
+      
+      const data = await res.json();
+      setUserData(data.data);
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  };
+
+  fetchUserData();
+}, [user]); // Only run when `user` updates
+
+useEffect(() => {
+  if (!userData) return;
+
+  // Get enrolled course IDs
+  const enrolledCourseIds = new Set(userData.courses.map(c => c.courseId));
+
+  const updatedFilteredCourses = courses
     .filter((course) => {
       if (filter === "all") return true;
-      return course.isEnrolled;
+      return enrolledCourseIds.has(course._id); // Check if enrolled
     })
     .filter(
       (course) =>
         course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         course.category?.toLowerCase().includes(searchQuery.toLowerCase())
     );
+
+  setFilteredCourses(updatedFilteredCourses);
+}, [userData, courses, filter, searchQuery]);
 
   const refreshData = () => {
     dispatch(fetchCourses());
@@ -182,8 +219,39 @@ export default function CoursesPage() {
 
 // Course Card Component
 function CourseCard({ course }) {
-  const { _id, title, image, description, instructor, level, isEnrolled } =
-    course;
+  const { _id, title, image, description, level } = course;
+  const [user, setUser] = useState(null);
+  const [userData, setUserData] = useState(null);
+  const [isEnrolled, setIsEnrolled] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+      setUser(storedUser);
+    }
+  }, []);
+  
+  useEffect(() => {
+    if (!user?._id) return;
+
+    const fetchUserData = async () => {
+      try {
+        const res = await fetch(`https://course-back-2-00rq.onrender.com/api/user/${user._id}`);
+        if (!res.ok) throw new Error("Failed to fetch user data");
+        
+        const data = await res.json();
+        setUserData(data.data);
+        
+        // Check if the user is enrolled in this course
+        const enrolledCourseIds = new Set(data.data.courses.map(c => c.courseId));
+        setIsEnrolled(enrolledCourseIds.has(_id));
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUserData();
+  }, [user, _id]);
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -206,20 +274,20 @@ function CourseCard({ course }) {
           </span>
 
           {isEnrolled ? (
-            <Link
-              href={`/course/${_id}`}
-              className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors duration-200"
-            >
-              Open Course
-            </Link>
-          ) : (
-            <Link
-              href={`/course/${_id}/enroll`}
-              className="px-4 py-2 border border-green-600 text-green-600 rounded hover:bg-green-50 transition-colors duration-200"
-            >
-              Enroll Now
-            </Link>
-          )}
+              <Link
+                href={`/dashboard?courseId=${_id}`}
+                className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors duration-200"
+              >
+                Open Course
+              </Link>
+            ) : (
+              <Link
+              href={`/enroll?courseId=${_id}`}
+                className="px-4 py-2 border border-green-600 text-green-600 rounded hover:bg-green-50 transition-colors duration-200"
+              >
+                Enroll Now
+              </Link>
+            )}
         </div>
       </div>
     </div>
