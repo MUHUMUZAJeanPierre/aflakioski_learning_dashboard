@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { ChevronRight, ChevronDown, Maximize, Minimize } from "lucide-react";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
@@ -73,6 +74,17 @@ export default function Dashboard({ selectedModule }) {
       <h2 className="text-sm">{selectedModule.title}</h2>
       <p className="text-sm text-gray-600">{selectedModule.description}</p>
 
+      {selectedModule.quiz && (
+        <div className="mt-2 mb-4">
+          <Link 
+            href={`/quiz/${selectedModule._id}`}
+            className="inline-block px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 font-medium"
+          >
+            Take Module Quiz
+          </Link>
+        </div>
+      )}
+
       <div className="space-y-4">
         {selectedModule.submodules.map((submodule, submoduleIndex) => (
           <div key={submodule._id} className="border p-4 rounded-lg">
@@ -95,27 +107,29 @@ export default function Dashboard({ selectedModule }) {
                     <h4 className="font-normal text-sm">{lesson.title}</h4>
                     <p className="text-sm text-gray-600">{lesson.description}</p>
 
-                    {lesson.videoUrl && (
-                      <button
-                        onClick={() => handleVideoClick(lessonIndex, lesson.videoUrl)}
-                        className="text-blue-600 font-normal mt-2 block hover:underline"
-                      >
-                        Watch Video
-                      </button>
-                    )}
+                    <div className="mt-2 flex flex-col space-y-2">
+                      {lesson.videoUrl && (
+                        <button
+                          onClick={() => handleVideoClick(lessonIndex, lesson.videoUrl)}
+                          className="text-blue-600 font-normal hover:underline text-left"
+                        >
+                          Watch Video
+                        </button>
+                      )}
 
-                    {lesson.resources?.map((resource, resourceIndex) => (
-                      <div key={resourceIndex} className="mt-2">
-                        {resource.pdfUrls?.length > 0 && (
-                          <button
-                            onClick={() => handleSlidesClick(lessonIndex, resource.pdfUrls)}
-                            className="text-red-600 font-semibold block hover:underline"
-                          >
-                            View Slides
-                          </button>
-                        )}
-                      </div>
-                    ))}
+                      {lesson.resources?.map((resource, resourceIndex) => (
+                        <div key={resourceIndex}>
+                          {resource.pdfUrls?.length > 0 && (
+                            <button
+                              onClick={() => handleSlidesClick(lessonIndex, resource.pdfUrls)}
+                              className="text-red-600 font-semibold hover:underline text-left"
+                            >
+                              View Slides
+                            </button>
+                          )}
+                        </div>
+                      ))}
+                    </div>
 
                     {/* Video Player - Appears below "Watch Video" */}
                     {activeVideo[lessonIndex] && (

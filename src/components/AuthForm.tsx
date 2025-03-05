@@ -74,7 +74,7 @@ export default function AuthForm() {
     const state = Math.random().toString(36).substring(7);
     localStorage.setItem('oauth_state', state);
     
-    const googleAuthUrl = new URL("https://course-back-2-00rq.onrender.com/auth/google");
+    const googleAuthUrl = new URL("http://localhost:5000/auth/google");
     googleAuthUrl.searchParams.append('state', state);
     googleAuthUrl.searchParams.append('redirect_uri', `${window.location.origin}/auth/callback`);
     
@@ -105,7 +105,7 @@ export default function AuthForm() {
           <input
             type="email"
             name="email"
-            placeholder="Your Email"
+            placeholder="example@example.example"
             className="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
             value={formData.email}
             onChange={handleChange}

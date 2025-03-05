@@ -7,11 +7,15 @@ export function Sidebar({
   isSidebarOpen, 
   setIsSidebarOpen, 
   modules = [], 
+  completedModules = [],
   loading, 
   error 
 }) {
   const [expanded, setExpanded] = useState(false);
   const [selectedModuleIndex, setSelectedModuleIndex] = useState(null);
+  if(modules.length>0){
+    console.log(modules)
+  }
 
   return (
     <>
@@ -54,21 +58,30 @@ export function Sidebar({
               ) : error ? (
                 <div className="text-red-500 text-sm">Error loading modules.</div>
               ) : modules.length > 0 ? (
-                modules.map((module, index) => (
-                  <div
-                    key={module._id || index}
-                    className={`flex items-center space-x-2 p-2 text-black cursor-pointer font-medium rounded-md transition-colors
-                      ${selectedModuleIndex === index ? "bg-green-100 border-l-4 border-[#15803D]" : "hover:bg-gray-200"}`}
-                    onClick={() => {
-                      setSelectedModule(module);
-                      setSelectedModuleIndex(index);
-                      setIsSidebarOpen(window.innerWidth < 768 ? false : isSidebarOpen);
-                    }}
-                  >
-                    <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-                    <span className="text-sm">{module.title || `Module ${index + 1}`}</span>
-                  </div>
-                ))
+                modules.map((module, index) => {
+                  const areAllPreviousModulesCompleted = index === 0 || 
+                  modules.slice(0, index).every(prevModule => completedModules.includes(prevModule._id));
+
+                  const isUnlocked = areAllPreviousModulesCompleted || completedModules.includes(module._id); 
+                  return (
+                    <div
+                      key={module._id || index}
+                      className={`flex items-center space-x-2 p-2 cursor-pointer font-medium rounded-md transition-colors
+                        ${isUnlocked ? "text-black hover:bg-gray-200" : "text-gray-400 cursor-not-allowed"}
+                        ${selectedModuleIndex === index && isUnlocked ? "bg-green-100 border-l-4 border-[#15803D]" : ""}`}
+                      onClick={() => {
+                        if (isUnlocked) {
+                          setSelectedModule(module);
+                          setSelectedModuleIndex(index);
+                          setIsSidebarOpen(window.innerWidth < 768 ? false : isSidebarOpen);
+                        }
+                      }}
+                    >
+                      <div className={`w-3 h-3 rounded-full ${isUnlocked ? "bg-gray-400" : "bg-gray-300"}`}></div>
+                      <span className="text-sm">{module.title || `Module ${index + 1}`}</span>
+                    </div>
+                  );
+                })
               ) : (
                 <div className="text-gray-500 text-sm">No modules available.</div>
               )}
@@ -76,6 +89,7 @@ export function Sidebar({
           )}
         </div>
 
+        {/* Sidebar navigation */}
         <nav className="space-y-2 mt-6 mx-2">
           <a href="#" className="flex items-center px-4 py-2 text-sm text-black hover:bg-gray-200 rounded-md transition-colors">
             <FileText className="w-5 h-5 mr-2 text-gray-600" />

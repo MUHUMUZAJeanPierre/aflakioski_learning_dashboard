@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BASE_URL,
 });
 
@@ -20,8 +20,8 @@ export const courseApi = {
   getAllCourseModules: (courseId) => api.get(`/coursemodules/${courseId}`),
   getModuleById: (moduleId) => api.get(`/modules/${moduleId}`),
   getLessons: (moduleId) => api.get(`/modules/${moduleId}/lessons`),
-  submitQuiz: (moduleId, answers) => 
-    api.post(`/modules/${moduleId}/quiz/submit`, { answers }),
+  // updateQuizScore: (quizData) => 
+  //   api.post('/progress/update-quiz-score', { quizData }),
   updateProgress: (courseId, moduleId, lessonId) =>
     api.post(`/course/${courseId}/progress`, { moduleId, lessonId }),
   fetchSubmoduleDetails: (submoduleId) => api.get(`/submodules/${submoduleId}`),

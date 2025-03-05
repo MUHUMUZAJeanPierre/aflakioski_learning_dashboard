@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCourses } from "../../redux/slices/dataSlice";
+import { fetchCourses, clearCourseState } from "../../redux/slices/dataSlice";
 import { Header } from "../../components/Header";
 import Link from "next/link";
 import { Search, Book, Filter, X, RefreshCw, AlertCircle } from "lucide-react";
@@ -223,6 +223,7 @@ function CourseCard({ course }) {
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState(null);
   const [isEnrolled, setIsEnrolled] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -277,6 +278,7 @@ function CourseCard({ course }) {
               <Link
                 href={`/dashboard?courseId=${_id}`}
                 className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors duration-200"
+                onClick={() => dispatch(clearCourseState())}
               >
                 Open Course
               </Link>

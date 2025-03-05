@@ -5,18 +5,17 @@ import { Sidebar } from "../../components/Sidebar";
 import Dashboard from "../../components/Dashboard";
 import { Header } from "../../components/Header";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchModules, fetchCourse } from "../../redux/slices/dataSlice";
+import { fetchModules, fetchCourse, setSelectedModule } from "../../redux/slices/dataSlice";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export default function Homepage() {
-  const [selectedModule, setSelectedModule] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const courseId = searchParams.get("courseId");
 
-  const { modules = [], loading, error, courses = [], course = {} } = useSelector((state) => state.data || {});
+  const { modules = [], loading, error, courses = [], course = {}, selectedModule } = useSelector((state) => state.data || {});
 
   useEffect(() => {
     if (courseId) {
@@ -24,8 +23,25 @@ export default function Homepage() {
       dispatch(fetchCourse(courseId));
     }
   }, [dispatch, courseId]);
+  
+  useEffect(() => {
+    if (modules.length > 0) {
+      const moduleIds = modules.map(module => module);
+      localStorage.setItem('coursemodules', JSON.stringify(moduleIds));
+    }
+  }, [modules, courseId]);
+  
 
   const currentCourse = course?._id === courseId ? course : courses?.find((c) => c._id === courseId) || {};
+  
+  const completedModules = currentCourse?.enrolledStudents?.flatMap(student => 
+    student.courses
+      .filter(c => c.courseId === courseId)
+      .flatMap(c => c.completedModules)
+  ) || [];
+  
+  const completedModuleIds = completedModules.map(module => module.moduleId);
+  
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -41,10 +57,11 @@ export default function Homepage() {
       
       <div className="flex flex-1 overflow-hidden">
         <Sidebar
-          setSelectedModule={setSelectedModule}
+          setSelectedModule={(module) => dispatch(setSelectedModule(module))}
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
           modules={modules}
+          completedModules={completedModuleIds}
           loading={loading}
           error={error}
         />

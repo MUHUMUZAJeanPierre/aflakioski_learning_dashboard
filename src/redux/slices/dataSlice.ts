@@ -16,6 +16,7 @@ export const fetchCourse = createAsyncThunk(
     return response.data.data;
   }
 );
+
 export const fetchModules = createAsyncThunk(
   'modules/fetchModules',
   async (courseId) => {
@@ -63,9 +64,6 @@ export const enrollInCourse = createAsyncThunk(
   }
 );
 
-
-
-
 const dataSlice = createSlice({
   name: 'admin',
   initialState: {
@@ -73,6 +71,7 @@ const dataSlice = createSlice({
     modules: [],
     submodules: [],
     currentSubmodule: null,
+    selectedModule: null,
     course: null,
     loading: false,
     error: null,
@@ -81,10 +80,16 @@ const dataSlice = createSlice({
     clearError: (state) => {
       state.error = null;
     },
+    setSelectedModule: (state, action) => {
+      state.selectedModule = action.payload;
+    },
+    clearCourseState: (state) => {
+      state.selectedModule = null;
+
+    },
   },
   extraReducers: (builder) => {
     builder
-      // Fetch Courses
       .addCase(fetchCourses.pending, (state) => {
         state.loading = true;
       })
@@ -107,14 +112,12 @@ const dataSlice = createSlice({
         state.error = action.error.message;
         state.loading = false;
       })
-      // Update Course
       .addCase(updateCourse.fulfilled, (state, action) => {
         const index = state.courses.findIndex(course => course._id === action.payload._id);
         if (index !== -1) {
           state.courses[index] = action.payload;
         }
       })
-      // Fetch Modules
       .addCase(fetchModules.fulfilled, (state, action) => {
         state.modules = action.payload;
       })
@@ -157,5 +160,5 @@ const dataSlice = createSlice({
   },
 });
 
-export const { clearError } = dataSlice.actions;
+export const { clearError, setSelectedModule, clearCourseState } = dataSlice.actions; 
 export default dataSlice.reducer;
