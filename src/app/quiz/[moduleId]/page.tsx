@@ -344,7 +344,7 @@ export default function QuizPage({ params: initialParams }) {
                 }
                 }
               >
-                Return to Dashboard
+                Next Module
               </Link>
 
               <button
