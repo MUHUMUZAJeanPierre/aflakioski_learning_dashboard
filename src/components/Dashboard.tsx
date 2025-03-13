@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { ChevronRight, ChevronDown, Maximize, Minimize } from "lucide-react";
+import { ChevronRight, ChevronDown, Maximize, Minimize, Check } from "lucide-react";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -11,14 +11,49 @@ export default function Dashboard({ selectedModule }) {
   const [activeSlides, setActiveSlides] = useState({});
   const [currentSlideIndex, setCurrentSlideIndex] = useState({});
   const [fullScreen, setFullScreen] = useState({});
+  const [completedSubmodules, setCompletedSubmodules] = useState({});
 
   const containerRefs = useRef({});
+
+  useEffect(() => {
+    // Initialize completed submodules state from the module data
+    const initialCompletedState = selectedModule.submodules.reduce((acc, submodule, index) => {
+      acc[index] = submodule.isCompleted || false;
+      return acc;
+    }, {});
+    setCompletedSubmodules(initialCompletedState);
+  }, [selectedModule]);
 
   const toggleSubmodule = (index) => {
     setExpandedSubmodules((prev) => ({
       ...prev,
       [index]: !prev[index],
     }));
+  };
+
+  const handleSubmoduleComplete = async (submoduleId, index) => {
+    try {
+      const response = await fetch(`https://course-back-2-00rq.onrender.com/api/v1/submodules/${submoduleId}/complete`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          isCompleted: !completedSubmodules[index] 
+        }),
+      });
+
+      if (response.ok) {
+        setCompletedSubmodules((prev) => ({
+          ...prev,
+          [index]: !prev[index],
+        }));
+      } else {
+        console.error('Failed to update submodule completion status');
+      }
+    } catch (error) {
+      console.error('Error updating submodule completion:', error);
+    }
   };
 
   const handleVideoClick = (lessonIndex, videoUrl) => {
@@ -69,12 +104,15 @@ export default function Dashboard({ selectedModule }) {
     }
   };
 
+  // Check if all submodules are completed
+  const areAllSubmodulesCompleted = Object.values(completedSubmodules).every(Boolean);
+
   return (
     <div className="flex flex-col w-full p-6 space-y-4 font-sans">
       <h2 className="text-sm">{selectedModule.title}</h2>
       <p className="text-sm text-gray-600">{selectedModule.description}</p>
 
-      {selectedModule.quiz && (
+      {selectedModule.quiz && areAllSubmodulesCompleted && (
         <div className="mt-2 mb-4">
           <Link 
             href={`/quiz/${selectedModule._id}`}
@@ -97,7 +135,7 @@ export default function Dashboard({ selectedModule }) {
               ) : (
                 <ChevronRight className="w-5 h-5 text-gray-600" />
               )}
-              <h3 className="text-sm font-sm">{submodule.title}</h3>
+              <h3 className="text-sm font-sm flex-grow">{submodule.title}</h3>
             </div>
 
             {expandedSubmodules[submoduleIndex] && submodule.lessons?.length > 0 && (
@@ -197,6 +235,32 @@ export default function Dashboard({ selectedModule }) {
                     )}
                   </div>
                 ))}
+
+                {/* Submodule Completion Checkbox */}
+                <div className="mt-4 flex items-center space-x-2">
+                  <div 
+                    onClick={(e) => {
+                      e.stopPropagation(); 
+                      handleSubmoduleComplete(submodule._id, submoduleIndex);
+                    }}
+                    className={`w-6 h-6 border rounded flex items-center justify-center cursor-pointer ${
+                      completedSubmodules[submoduleIndex] 
+                        ? 'bg-green-500 border-green-500' 
+                        : 'border-gray-300 bg-white'
+                    }`}
+                  >
+                    {completedSubmodules[submoduleIndex] && <Check className="text-white w-4 h-4" />}
+                  </div>
+                  <label 
+                    onClick={(e) => {
+                      e.stopPropagation(); 
+                      handleSubmoduleComplete(submodule._id, submoduleIndex);
+                    }}
+                    className="cursor-pointer text-sm"
+                  >
+                    Mark Submodule as Completed
+                  </label>
+                </div>
               </div>
             )}
           </div>
