@@ -82,65 +82,73 @@ export default function AuthForm() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-cover bg-center bg-no-repeat relative">
+    <div className="flex justify-center items-center min-h-screen bg-cover bg-center bg-no-repeat relative px-4 sm:px-6">
       <div className="absolute inset-0 bg-cover bg-center hero">
         <div className="absolute inset-0 bg-black/80"></div>
       </div>
-      <div className="bg-white p-8 rounded-md shadow-lg w-[24rem] relative">
-        <h2 className="text-xl font-semibold mb-6 font-sans text-[#16A34A]">
+      <div className="bg-white p-5 sm:p-8 rounded-md shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-md relative">
+        <h2 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 font-sans text-[#16A34A]">
           {isLogin ? 'LOGIN' : 'CREATE ACCOUNT'}
         </h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
           {!isLogin && (
-            <input
-              type="text"
-              name="username"
-              placeholder="John Doe"
-              className="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
-              value={formData.username}
-              onChange={handleChange}
-              required
-            />
-          )}
-          <input
-            type="email"
-            name="email"
-            placeholder="example@example.example"
-            className="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            className="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-          {!isLogin && (
-            <>
+            <div>
               <input
-                type="password"
-                name="confirmPassword"
-                placeholder="Repeat your password"
-                className="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
-                value={formData.confirmPassword}
+                type="text"
+                name="username"
+                placeholder="John Doe"
+                className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
+                value={formData.username}
                 onChange={handleChange}
                 required
               />
-              <div className="flex items-center mb-4">
+            </div>
+          )}
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="example@example.example"
+              className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          {!isLogin && (
+            <>
+              <div>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  placeholder="Repeat your password"
+                  className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="flex items-start sm:items-center">
                 <input
                   type="checkbox"
                   name="termsAccepted"
-                  className="w-4 h-4 mr-2"
+                  className="w-4 h-4 mr-2 mt-0.5 sm:mt-0"
                   checked={formData.termsAccepted}
                   onChange={handleChange}
                   required
                 />
-                <label className="text-sm">
+                <label className="text-xs sm:text-sm">
                   I agree to all statements in{' '}
                   <Link href="#" className="text-[#16A34A] font-semibold">
                     Terms of Service
@@ -151,22 +159,23 @@ export default function AuthForm() {
           )}
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-[#16A34A] to-[#16A34A] text-white py-2 rounded-md hover:opacity-90"
+            className="w-full bg-gradient-to-r from-[#16A34A] to-[#16A34A] text-white py-2 text-sm sm:text-base rounded-md hover:opacity-90 transition-opacity"
           >
             {isLogin ? 'LOGIN' : 'SIGN UP'}
           </button>
         </form>
 
-        <div className="mt-4 flex justify-center gap-4 w-full bg-gradient-to-r from-[#16A34A] to-[#16A34A] text-white py-2 rounded-md hover:opacity-90">
+        <div className="mt-3 sm:mt-4">
           <button
             onClick={handleGoogleLogin}
-            className="flex items-center justify-center hover:bg-[#16A34A] text-white py-2 px-2 rounded-full hover:opacity-90"
+            className="w-full flex items-center justify-center bg-gradient-to-r from-[#16A34A] to-[#16A34A] text-white py-2 rounded-md hover:opacity-90 transition-opacity text-sm sm:text-base"
           >
-            <FaGoogle className="text-lg text-white hover:text-white" /> 
+            <FaGoogle className="text-base sm:text-lg text-white mr-2" /> 
+            {isLogin ? 'Login with Google' : 'Sign up with Google'}
           </button>
         </div>
 
-        <p className="text-center text-sm mt-4 flex gap-2">
+        <p className="text-center text-xs sm:text-sm mt-4 flex flex-wrap justify-center gap-1 sm:gap-2">
           {isLogin ? (
             <>
               Don't have an account?{' '}

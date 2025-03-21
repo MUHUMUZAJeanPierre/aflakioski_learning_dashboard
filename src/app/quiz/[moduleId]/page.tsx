@@ -458,4 +458,4 @@ export default function QuizPage({ params: initialParams }) {
       </div>
     </div>
   );
-
+}
